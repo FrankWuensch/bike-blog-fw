@@ -5,7 +5,6 @@
 ::-webkit-scrollbar {
   visibility: hidden;
   display: none;
-
 }
 
 .base-font {
@@ -33,15 +32,19 @@ main h1 {
 }
 
 h2 {
-  @apply text-nowrap text-xl text-lime-400 underline decoration-lime-400 underline-offset-4;
+  @apply text-nowrap pb-6 text-2xl text-lime-400;
 }
 
 h3 {
-  @apply text-nowrap pt-4 text-base text-lime-600;
+  @apply text-nowrap pb-1.5 text-base text-lime-600;
+}
+
+h4 {
+  @apply flex w-full justify-end;
 }
 
 p {
-  @apply pt-4 leading-loose;
+  @apply pb-4 leading-relaxed;
 }
 
 hr {
