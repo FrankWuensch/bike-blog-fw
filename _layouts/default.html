@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de" class="h-full w-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{site.baseurl}}src/fonts.css" rel="stylesheet" />
+    <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
+    <link rel="icon" href="{{site.baseurl}}src/fahrrad_symbol_bw.png" />
+    <title>{{page.title}}</title>
+  </head>
+
+  <body class="base-font flex h-full w-full flex-col overflow-hidden">
+    {%if page.header%}
+    <header class="flex-0 fixed left-0 top-0 h-48 w-full">
+      {% include header.html %}
+    </header>
+    {%endif%}
+    <!-- check responsive styling upon 1280px (--tw-xl) breakpoint -->
+    <main class="no-scrollbar mt-48 h-full w-full flex-1 overflow-y-auto py-12">
+      <div class="mx-auto max-w-6xl">{{content}}</div>
+    </main>
+  </body>
+</html>

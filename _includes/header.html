@@ -1,0 +1,13 @@
+<nav class="h-full w-full bg-lime-200">
+  <span class="mx-auto flex h-full max-w-6xl flex-row items-center gap-x-12">
+    <img src="{{site.baseurl}}src/fahrrad_symbol.png" class="h-full" />
+    <h1>{{site.title}}</h1>
+    <ul class="flex flex-row gap-x-4">
+      {%for link in site.nav_links%}
+      <li>
+        <a href="{%if link.href%}{{link.href}}{%endif%}" class="link-title p-4">{{link.name}}</a>
+      </li>
+      {%endfor%}
+    </ul>
+  </span>
+</nav>

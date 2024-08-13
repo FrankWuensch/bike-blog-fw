@@ -1,0 +1,17 @@
+:root {
+  --tw-font-xl: 1.25rem;
+  --tw-font-2xl: 1.5rem;
+  --tw-font-3xl: 1.875rem;
+  --h1-color-light: #65a30d;
+  --h2-color-light: #a3e635;
+  --link-text-color: #0ea5e9;
+  --link-text-color-hover: #0369a1;
+}
+
+a[href] {
+  color: var(--link-text-color)
+}
+
+a[href] :hover {
+  color: var(--link-text-color-hover);
+}

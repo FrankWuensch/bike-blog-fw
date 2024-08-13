@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('fonts/InterVariable.ttf');
+}
+
+@font-face {
+  font-family: 'InterItalic';
+  src: url('fonts/InterVariable-Italic.ttf');
+}

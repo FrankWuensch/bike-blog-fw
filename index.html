@@ -1,0 +1,50 @@
+---
+layout: default
+title: Bike Blog FW
+header: true
+date: 13.08.2024
+touren:
+  - name: Bodensee Rundtour 2022
+    length: 535
+    steps: 5
+  - name: Kirchheim - Garmisch-Partenkirchen - Kirchheim 2023
+    length: 617
+    steps: 8
+  - name: Oberstdorf - Flensburg - Westerland 2024
+    length: 1562
+    steps: 19
+    link: "2024.html"
+---
+
+<h2>Bisherige Touren</h2>
+<table class="mt-8 w-full text-nowrap">
+  <tr class="text-left">
+    <th>Tour</th>
+    <th>Länge</th>
+    <th>Etappen</th>
+    <th>GPX Datei</th>
+    <th>Zur Beschreibung</th>
+  </tr>
+  {%for tour in page.touren%}
+  <tr class="table-row">
+    <td>{{tour.name}}</td>
+    <td>{{tour.length}} km</td>
+    <td>{{tour.steps}}</td>
+    <td>
+      {%if tour.gpx%}
+      <a href="{{site.baseurl}}{{tour.gpx}}" download
+        >Download{%else%}Keine GPX Datei
+      </a>
+      {%endif%}
+    </td>
+    <td>
+      {%if tour.link%}
+      <a href="{{tour.link}}">Link</a>
+      {%endif%}
+    </td>
+  </tr>
+  {%endfor%}
+</table>
+<div class="w-full">
+<p class="flex justify-end text-neutral-500">Zuletzt aktualisiert {{page.date}}</p>
+</div>
