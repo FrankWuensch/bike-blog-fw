@@ -1,6 +1,5 @@
 # bike-blog-fw
 
-## Description
+## Beschreibung
 
-This repository offers a small blog website about my bike tours, providing the possibility to download the gpx tracks and get some information about my equipement used on this tour. 
-There would be also links to the best hotels / appartements for overnight on each tour.
+Dieses Repository erstellt eine Blog-Webseite über meine bisherigen mehrtägigen Fahrradtouren. Der Anwender hat die Möglichkeit, die jeweilige Tour als GPX Datei herunterzuladen und selbst nachzufahren. Außerdem stelle ich diverse Tipps und Hinweise zu meiner Ausrüstung zur Verfügung.
