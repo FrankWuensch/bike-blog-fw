@@ -11,11 +11,56 @@
 
   <body class="base-font flex h-full w-full flex-col overflow-hidden">
     
-    <header class="flex-0 fixed left-0 top-0 h-48 w-full">
-      <nav class="h-full w-full bg-lime-200">
+    <header class="flex-0 fixed left-0 top-0 z-10 h-20 w-full xl:h-48">
+      <nav class="relative h-full w-full bg-lime-200">
   <span class="mx-auto flex h-full max-w-6xl flex-row items-center gap-x-12">
     <img src="src/fahrrad_symbol.png" class="h-full" />
-    <span class="flex w-full items-center justify-between">
+    <!-- for mobile screens < 1280px -->
+    <h1 class="flex items-center justify-center xl:hidden">Bike Blog FW</h1>
+    <div
+      class="absolute right-0 top-0 flex h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer xl:hidden"
+      id="menu"
+    >
+      <img
+        src="src/icons/menu.svg"
+        alt="menu-icon"
+        class="w-[75%]"
+      />
+      <div
+        class="fixed right-0 top-0 z-10 mt-20 hidden w-[75%] divide-y divide-lime-200 rounded-bl-xl bg-lime-50 shadow-md"
+        id="menu-content"
+      >
+        <span class="flex w-full flex-col">
+          
+          <a
+            href="index.html"
+            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800 hover:shadow-inner"
+            >Start
+          </a>
+          
+          <a
+            href="me.html"
+            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800 hover:shadow-inner"
+            >Über mich
+          </a>
+          
+          <a
+            href="equipment.html"
+            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800 hover:shadow-inner"
+            >Ausrüstung
+          </a>
+          
+          <a
+            href=""
+            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800 hover:shadow-inner"
+            >Trainingsstrecken
+          </a>
+          
+        </span>
+      </div>
+    </div>
+    <!-- for screens >= 1280px (xl) -->
+    <span class="flex w-full items-center justify-between max-xl:hidden">
       <h1>Bike Blog FW</h1>
       <ul class="flex flex-row gap-x-8">
         
@@ -58,10 +103,49 @@
 
     </header>
     
-    <!-- check responsive styling upon 1280px (--tw-xl) breakpoint -->
-    <main class="mt-48 h-full w-full flex-1 overflow-y-auto pb-24 pt-12">
+    <!-- check responsive styling upon 1280px (xl) breakpoint -->
+    <main
+      class="mt-20 h-full w-full flex-1 overflow-y-auto px-8 pb-12 pt-8 xl:mt-48 xl:px-0 xl:pb-24 xl:pt-12"
+      id="main-container"
+    >
       <div class="relative mx-auto max-w-6xl"><h2>Bisherige Touren</h2>
-<table class="w-full text-nowrap">
+<!-- for mobile screens < 1280px -->
+
+<details class="xl:hidden">
+  <summary>Bodensee Rundtour 2022</summary>
+  <span class="flex w-full flex-col pl-[17.5px] text-base">
+    <div>Länge: 535 km</div>
+    <div>Anzahl Etappen: 5</div>
+    Keine GPX Datei</a
+    >
+    
+  </span>
+</details>
+
+<details class="xl:hidden">
+  <summary>Kirchheim - Garmisch-Partenkirchen - Kirchheim 2023</summary>
+  <span class="flex w-full flex-col pl-[17.5px] text-base">
+    <div>Länge: 617 km</div>
+    <div>Anzahl Etappen: 8</div>
+    Keine GPX Datei</a
+    >
+    
+  </span>
+</details>
+
+<details class="xl:hidden">
+  <summary>Oberstdorf - Flensburg - Westerland 2024</summary>
+  <span class="flex w-full flex-col pl-[17.5px] text-base">
+    <div>Länge: 1562 km</div>
+    <div>Anzahl Etappen: 19</div>
+    Keine GPX Datei</a
+    >
+    <a href="2024.html">Link</a>
+  </span>
+</details>
+
+<!-- for screens >= 1280px (xl) -->
+<table class="w-full text-nowrap max-xl:hidden">
   <tr class="text-left">
     <th>Tour</th>
     <th>Länge</th>
@@ -116,9 +200,25 @@
   
 </table>
 <div class="w-full">
-<p class="flex justify-end pt-8 text-neutral-500">Zuletzt aktualisiert 13.08.2024</p>
+  <p class="flex justify-end pt-8 text-neutral-500">
+    Zuletzt aktualisiert 13.08.2024
+  </p>
 </div>
 </div>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.querySelector("#menu");
+        const menuContent = document.querySelector("#menu-content");
+        const mainContainer = document.querySelector("#main-container");
+        if (menu) {
+          menu.addEventListener("click", (e) => {
+            menuContent.classList.toggle("hidden");
+            mainContainer.classList.toggle("blur-sm");
+          });
+        }
+      });
+    </script>
   </body>
 </html>

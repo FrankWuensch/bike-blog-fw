@@ -11,13 +11,30 @@
 
   <body class="base-font flex h-full w-full flex-col overflow-hidden">
     {%if page.header%}
-    <header class="flex-0 fixed left-0 top-0 h-48 w-full">
+    <header class="flex-0 fixed left-0 top-0 z-10 h-20 w-full xl:h-48">
       {% include header.html %}
     </header>
     {%endif%}
-    <!-- check responsive styling upon 1280px (--tw-xl) breakpoint -->
-    <main class="mt-48 h-full w-full flex-1 overflow-y-auto pb-24 pt-12">
+    <!-- check responsive styling upon 1280px (xl) breakpoint -->
+    <main
+      class="mt-20 h-full w-full flex-1 overflow-y-auto px-8 pb-12 pt-8 xl:mt-48 xl:px-0 xl:pb-24 xl:pt-12"
+      id="main-container"
+    >
       <div class="relative mx-auto max-w-6xl">{{content}}</div>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.querySelector("#menu");
+        const menuContent = document.querySelector("#menu-content");
+        const mainContainer = document.querySelector("#main-container");
+        if (menu) {
+          menu.addEventListener("click", (e) => {
+            menuContent.classList.toggle("hidden");
+            mainContainer.classList.toggle("blur-sm");
+          });
+        }
+      });
+    </script>
   </body>
 </html>
