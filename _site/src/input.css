@@ -20,7 +20,7 @@ i, em, .font-italic {
 }
 
 nav h1 {
-  @apply text-2xl text-lime-600;
+  @apply text-xl text-lime-600 xl:text-2xl;
 }
 
 nav .link-title {
@@ -28,15 +28,15 @@ nav .link-title {
 }
 
 main h1 {
-  @apply pb-8 text-3xl text-lime-600;
+  @apply pb-4 text-xl text-lime-600 xl:pb-8 xl:text-3xl;
 }
 
 h2 {
-  @apply text-nowrap pb-6 text-2xl text-lime-400;
+  @apply text-nowrap pb-3 text-lg text-lime-400 xl:pb-6 xl:text-2xl;
 }
 
 h3 {
-  @apply text-nowrap pb-1.5 text-base text-lime-600;
+  @apply text-nowrap pb-1.5 text-sm text-lime-600 xl:text-base;
 }
 
 h4 {
@@ -48,11 +48,15 @@ p {
 }
 
 hr {
-  @apply mx-24 my-4;
+  @apply mx-8 mb-3 xl:mx-16 xl:mb-5;
 }
 
 th {
   @apply pr-8;
+}
+
+main img {
+  @apply pb-4;
 }
 
 main a[href] {

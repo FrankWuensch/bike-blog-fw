@@ -1431,6 +1431,12 @@ video {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
+.divide-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
+}
+
 .divide-y-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 1;
 }
@@ -2005,18 +2011,6 @@ video {
   padding-left: 1rem;
 }
 
-.pl-8 {
-  padding-left: 2rem;
-}
-
-.pl-\[17\.5px\] {
-  padding-left: 17.5px;
-}
-
-.pr-8 {
-  padding-right: 2rem;
-}
-
 .pt-8 {
   padding-top: 2rem;
 }
@@ -2077,9 +2071,9 @@ video {
   vertical-align: super;
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl {
@@ -2533,10 +2527,17 @@ i, em, .font-italic {
 }
 
 nav h1 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(101 163 13 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1280px) {
+  nav h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 nav .link-title {
@@ -2554,29 +2555,52 @@ nav .link-title:hover {
 }
 
 main h1 {
-  padding-bottom: 2rem;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(101 163 13 / var(--tw-text-opacity));
 }
 
+@media (min-width: 1280px) {
+  main h1 {
+    padding-bottom: 2rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
 h2 {
   text-wrap: nowrap;
-  padding-bottom: 1.5rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  padding-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(163 230 53 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1280px) {
+  h2 {
+    padding-bottom: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 h3 {
   text-wrap: nowrap;
   padding-bottom: 0.375rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(101 163 13 / var(--tw-text-opacity));
+}
+
+@media (min-width: 1280px) {
+  h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 h4 {
@@ -2598,14 +2622,25 @@ p {
 }
 
 hr {
-  margin-left: 6rem;
-  margin-right: 6rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 1280px) {
+  hr {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 1.25rem;
+  }
 }
 
 th {
   padding-right: 2rem;
+}
+
+main img {
+  padding-bottom: 1rem;
 }
 
 main a[href] {
@@ -2697,12 +2732,6 @@ main a[href]:hover {
   color: rgb(63 98 18 / var(--tw-text-opacity));
 }
 
-.hover\:shadow-inner:hover {
-  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .before\:hover\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
@@ -2764,8 +2793,17 @@ main a[href]:hover {
     padding-bottom: 6rem;
   }
 
+  .xl\:pl-\[17\.5px\] {
+    padding-left: 17.5px;
+  }
+
   .xl\:pt-12 {
     padding-top: 3rem;
+  }
+
+  .xl\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 

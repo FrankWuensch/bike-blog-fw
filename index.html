@@ -21,7 +21,7 @@ touren:
 {%for tour in page.touren%}
 <details class="xl:hidden">
   <summary>{{tour.name}}</summary>
-  <span class="flex w-full flex-col pl-[17.5px] text-base">
+  <span class="flex w-full flex-col pl-4 xl:pl-[17.5px]">
     <div>Länge: {{tour.length}} km</div>
     <div>Anzahl Etappen: {{tour.steps}}</div>
     {%if tour.gpx%}<a href="{{site.baseurl}}{{tour.gpx}}" download

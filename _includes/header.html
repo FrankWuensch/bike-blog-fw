@@ -13,14 +13,14 @@
         class="w-[75%]"
       />
       <div
-        class="fixed right-0 top-0 z-10 mt-20 hidden w-[75%] divide-y divide-lime-200 rounded-bl-xl bg-lime-50 shadow-md"
+        class="fixed right-0 top-0 z-10 mt-20 hidden w-[75%] rounded-bl-xl bg-lime-50 shadow-md"
         id="menu-content"
       >
-        <span class="flex w-full flex-col">
+        <span class="flex w-full flex-col divide-y-2 divide-lime-200">
           {%for link in site.nav_links%}
           <a
             href="{%if link.href%}{{link.href}}{%endif%}"
-            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800 hover:shadow-inner"
+            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800"
             >{{link.name}}
           </a>
           {%endfor%}
