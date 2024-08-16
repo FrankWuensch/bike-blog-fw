@@ -19,17 +19,19 @@ touren:
 <h2>Bisherige Touren</h2>
 <!-- for mobile screens < 1280px -->
 {%for tour in page.touren%}
-<details class="xl:hidden">
-  <summary>{{tour.name}}</summary>
-  <span class="flex w-full flex-col pl-4 xl:pl-[17.5px]">
-    <div>Länge: {{tour.length}} km</div>
-    <div>Anzahl Etappen: {{tour.steps}}</div>
-    {%if tour.gpx%}<a href="{{site.baseurl}}{{tour.gpx}}" download
-      >Download{%else%}Keine GPX Datei</a
-    >{%endif%}
-    {%if tour.link%}<a href="{{site.baseurl}}{{tour.link}}">Link</a>{%endif%}
-  </span>
-</details>
+<div class="details my-4 flex flex-col hover:cursor-pointer xl:hidden">
+  <details class="xl:hidden">
+    <summary>{{tour.name}}</summary>
+    <span class="flex w-full flex-col pt-3">
+      <div>Länge: {{tour.length}} km</div>
+      <div>Anzahl Etappen: {{tour.steps}}</div>
+      {%if tour.gpx%}<a href="{{site.baseurl}}{{tour.gpx}}" download
+        >Download{%else%}Keine GPX Datei</a
+      >{%endif%} {%if tour.link%}<a href="{{site.baseurl}}{{tour.link}}">Link</a
+      >{%endif%}
+    </span>
+  </details>
+</div>
 {%endfor%}
 <!-- for screens >= 1280px (xl) -->
 <table class="w-full text-nowrap max-xl:hidden">
@@ -61,7 +63,7 @@ touren:
   {%endfor%}
 </table>
 <div class="w-full">
-  <p class="flex justify-end pt-8 text-neutral-500">
+  <p class="flex justify-end pt-4 text-lime-600/50 xl:pt-8">
     Zuletzt aktualisiert {{page.date}}
   </p>
 </div>

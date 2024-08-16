@@ -726,6 +726,11 @@ video {
   margin-right: auto;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -2011,6 +2016,14 @@ video {
   padding-left: 1rem;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -2167,9 +2180,8 @@ video {
   color: rgb(101 163 13 / var(--tw-text-opacity));
 }
 
-.text-neutral-500 {
-  --tw-text-opacity: 1;
-  color: rgb(115 115 115 / var(--tw-text-opacity));
+.text-lime-600\/50 {
+  color: rgb(101 163 13 / 0.5);
 }
 
 .underline {
@@ -2513,6 +2525,18 @@ video {
   display: none;
 }
 
+details summary::marker {
+  content: "";
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  list-style-type: none;
+}
+
 .base-font {
   font-family: 'Inter';
 }
@@ -2637,6 +2661,8 @@ hr {
 
 th {
   padding-right: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(101 163 13 / var(--tw-text-opacity));
 }
 
 main img {
@@ -2654,18 +2680,34 @@ main a[href]:hover {
   text-decoration-line: underline;
 }
 
+.details {
+  --tw-border-spacing-x: 0.5rem;
+  --tw-border-spacing-y: 0.5rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+  border-radius: 1rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(190 242 100 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 252 203 / var(--tw-bg-opacity));
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .table-row {
   width: 100%;
 }
 
 .table-row:nth-child(odd) {
   --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity));
+  background-color: rgb(247 254 231 / var(--tw-bg-opacity));
 }
 
 .table-row:nth-child(even) {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+  background-color: rgb(236 252 203 / var(--tw-bg-opacity));
 }
 
 .table-row > td {
@@ -2784,6 +2826,10 @@ main a[href]:hover {
     width: 75%;
   }
 
+  .xl\:max-w-6xl {
+    max-width: 72rem;
+  }
+
   .xl\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -2793,12 +2839,12 @@ main a[href]:hover {
     padding-bottom: 6rem;
   }
 
-  .xl\:pl-\[17\.5px\] {
-    padding-left: 17.5px;
-  }
-
   .xl\:pt-12 {
     padding-top: 3rem;
+  }
+
+  .xl\:pt-8 {
+    padding-top: 2rem;
   }
 
   .xl\:text-base {
