@@ -44,7 +44,7 @@ main h1 {
 }
 
 h2 {
-  @apply text-nowrap pb-3 text-lg text-lime-400 xl:pb-6 xl:text-2xl;
+  @apply text-nowrap pb-3 text-lg text-lime-500 xl:pb-6 xl:text-2xl;
 }
 
 h3 {
