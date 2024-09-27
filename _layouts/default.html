@@ -7,9 +7,24 @@
     <link href="{{site.baseurl}}dist/output.css" rel="stylesheet" />
     <link rel="icon" href="{{site.baseurl}}src/fahrrad_symbol_bw.png" />
     <title>{{page.title}}</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet-gpx/gpx.js"></script>
   </head>
 
-  <body class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base">
+  <body
+    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base"
+  >
     {%if page.header%}
     <header class="flex-0 fixed left-0 top-0 z-10 h-20 w-full xl:h-48">
       {% include header.html %}
