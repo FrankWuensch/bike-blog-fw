@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,7 +28,9 @@ main {
   @apply hyphens-auto;
 }
 
-i, em, .font-italic {
+i,
+em,
+.font-italic {
   font-family: 'InterItalic';
 }
 
@@ -44,7 +47,7 @@ main h1 {
 }
 
 h2 {
-  @apply text-nowrap pb-3 text-lg text-lime-500 xl:pb-6 xl:text-2xl;
+  @apply text-nowrap pb-3 text-lg text-lime-600 xl:pb-6 xl:text-2xl;
 }
 
 h3 {
@@ -83,7 +86,7 @@ main a[href] {
   @apply w-full odd:bg-lime-50 even:bg-lime-100;
 }
 
-.table-row > td {
+.table-row>td {
   @apply py-2;
 }
 

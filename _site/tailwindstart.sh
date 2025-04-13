@@ -1,2 +1,2 @@
 #!/bin/bash
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch

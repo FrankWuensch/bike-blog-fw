@@ -23,10 +23,10 @@
   </head>
 
   <body
-    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base"
+    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base bg-linear-to-t from-amber-100 to-amber-50"
   >
     
-    <header class="flex-0 fixed left-0 top-0 z-10 h-20 w-full xl:h-48">
+    <header class="flex-0 fixed left-0 top-0 z-20 h-12 w-full xl:h-24">
       <nav class="relative h-full w-full bg-lime-200">
   <span class="flex h-full flex-row items-center gap-x-12 xl:mx-auto xl:max-w-6xl">
     <img src="src/fahrrad_symbol.png" class="h-full" />
@@ -42,7 +42,7 @@
         class="w-[75%]"
       />
       <div
-        class="fixed right-0 top-0 z-10 mt-20 hidden w-[75%] rounded-bl-xl bg-lime-50 shadow-md"
+        class="fixed right-0 top-0 z-10 mt-12 hidden w-[75%] rounded-bl-xl bg-lime-50 shadow-md"
         id="menu-content"
       >
         <span class="flex w-full flex-col divide-y-2 divide-lime-200">
@@ -106,111 +106,90 @@
     
     <!-- check responsive styling upon 1280px (xl) breakpoint -->
     <main
-      class="mt-20 h-full w-full flex-1 overflow-y-auto px-8 pb-12 pt-8 xl:mt-48 xl:px-0 xl:pb-24 xl:pt-12"
+      class="mt-12 xl:mt-24 h-full w-full flex-1 overflow-y-auto px-8 pb-12 pt-12 xl:px-0 xl:pb-20 xl:pt-20"
       id="main-container"
     >
       <div class="relative mx-auto max-w-6xl"><h2>Bisherige Touren</h2>
-<!-- for mobile screens < 1280px -->
-
-<div class="details my-4 flex flex-col hover:cursor-pointer xl:hidden">
-  <details class="xl:hidden">
-    <summary>Bodensee Rundtour 2022</summary>
-    <span class="flex w-full flex-col pt-3">
-      <div>Länge: 535 km</div>
-      <div>Anzahl Etappen: 5</div>
-      Keine GPX Datei</a
-      > 
-    </span>
-  </details>
-</div>
-
-<div class="details my-4 flex flex-col hover:cursor-pointer xl:hidden">
-  <details class="xl:hidden">
-    <summary>Kirchheim - Garmisch-Partenkirchen - Kirchheim 2023</summary>
-    <span class="flex w-full flex-col pt-3">
-      <div>Länge: 617 km</div>
-      <div>Anzahl Etappen: 9</div>
-      <a href="src/gpx_files/2023.gpx" download
-        >Download <a href="2023.html">Link</a
-      >
-    </span>
-  </details>
-</div>
-
-<div class="details my-4 flex flex-col hover:cursor-pointer xl:hidden">
-  <details class="xl:hidden">
-    <summary>Oberstdorf - Flensburg - Westerland 2024</summary>
-    <span class="flex w-full flex-col pt-3">
-      <div>Länge: 1562 km</div>
-      <div>Anzahl Etappen: 19</div>
-      <a href="src/gpx_files/2024.gpx" download
-        >Download <a href="2024.html">Link</a
-      >
-    </span>
-  </details>
-</div>
-
-<!-- for screens >= 1280px (xl) -->
-<table class="w-full text-nowrap max-xl:hidden">
-  <tr class="text-left">
-    <th>Tour</th>
-    <th>Länge</th>
-    <th>Etappen</th>
-    <th>GPX Datei</th>
-    <th>Zur Beschreibung</th>
-  </tr>
+<div class="grid gap-y-4 xl:gap-y-6">
   
-  <tr class="table-row">
-    <td>Bodensee Rundtour 2022</td>
-    <td>535 km</td>
-    <td>5</td>
-    <td>
-      Keine GPX Datei
-      </a>
-      
-    </td>
-    <td>
-      
-    </td>
-  </tr>
+  <div class="details flex flex-col hover:cursor-pointer">
+    <details>
+      <summary>Bodensee Rundtour 2022</summary>
+      <span class="flex w-full flex-col pt-3">
+        <div>Länge: 535 km</div>
+        <div>Anzahl Etappen: 5</div>
+        
+          Keine GPX Datei
+        
+        
+      </span>
+    </details>
+  </div>
   
-  <tr class="table-row">
-    <td>Kirchheim - Garmisch-Partenkirchen - Kirchheim 2023</td>
-    <td>617 km</td>
-    <td>9</td>
-    <td>
-      
-      <a href="src/gpx_files/2023.gpx" download
-        >Download
-    </td>
-    <td>
-      
-      <a href="2023.html">Link</a>
-      
-    </td>
-  </tr>
+  <div class="details flex flex-col hover:cursor-pointer">
+    <details>
+      <summary>Kirchheim - Garmisch-Partenkirchen - Kirchheim 2023</summary>
+      <span class="flex w-full flex-col pt-3">
+        <div>Länge: 617 km</div>
+        <div>Anzahl Etappen: 9</div>
+        
+          <a href="src/gpx_files/2023.gpx" download class="w-min text-nowrap">
+            Download GPX
+          </a>
+        
+        
+          <a href="2023.html">
+            Beschreibung
+          </a>
+        
+      </span>
+    </details>
+  </div>
   
-  <tr class="table-row">
-    <td>Oberstdorf - Flensburg - Westerland 2024</td>
-    <td>1562 km</td>
-    <td>19</td>
-    <td>
-      
-      <a href="src/gpx_files/2024.gpx" download
-        >Download
-    </td>
-    <td>
-      
-      <a href="2024.html">Link</a>
-      
-    </td>
-  </tr>
+  <div class="details flex flex-col hover:cursor-pointer">
+    <details>
+      <summary>Oberstdorf - Flensburg - Westerland 2024</summary>
+      <span class="flex w-full flex-col pt-3">
+        <div>Länge: 1562 km</div>
+        <div>Anzahl Etappen: 19</div>
+        
+          <a href="src/gpx_files/2024.gpx" download class="w-min text-nowrap">
+            Download GPX
+          </a>
+        
+        
+          <a href="2024.html">
+            Beschreibung
+          </a>
+        
+      </span>
+    </details>
+  </div>
   
-</table>
-<div class="w-full">
-  <p class="flex justify-end pt-4 text-lime-600/50 xl:pt-8">
-    Zuletzt aktualisiert 13.08.2024
-  </p>
+  </div>
+  <h2 class="mt-12 xl:mt-20">In Planung</h2>
+  <div class="grid gap-y-4 xl:gap-y-6">
+  
+  <div class="details flex flex-col hover:cursor-pointer">
+    <details>
+      <summary>Kirchheim - Oslo 2025</summary>
+      <span class="flex w-full flex-col pt-3">
+        <div>Länge: 1825 km</div>
+        <div>Anzahl Etappen: ca. 21</div>
+        
+          <a href="src/gpx_files/KT-Oslo.gpx" download class="w-min text-nowrap">
+            Download GPX
+          </a>
+           
+      </span>
+    </details>
+  </div>
+  
+  <div class="w-full">
+    <p class="flex justify-end text-lime-600/70">
+      Zuletzt aktualisiert 13.04.2025
+    </p>
+  </div>
 </div>
 </div>
     </main>

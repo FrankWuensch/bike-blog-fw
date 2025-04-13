@@ -2,7 +2,7 @@
 layout: default
 title: Bike Blog FW
 header: true
-date: 13.08.2024
+date: 13.04.2025
 touren:
   - name: Bodensee Rundtour 2022
     length: 535
@@ -17,56 +17,66 @@ touren:
     steps: 19
     link: "2024.html"
     gpx: "src/gpx_files/2024.gpx"
+planned:
+  - name: Kirchheim - Oslo 2025
+    length: 1825
+    steps: ca. 21
+    gpx: "src/gpx_files/KT-Oslo.gpx"
 ---
 
 <h2>Bisherige Touren</h2>
-<!-- for mobile screens < 1280px -->
-{%for tour in page.touren%}
-<div class="details my-4 flex flex-col hover:cursor-pointer xl:hidden">
-  <details class="xl:hidden">
-    <summary>{{tour.name}}</summary>
-    <span class="flex w-full flex-col pt-3">
-      <div>Länge: {{tour.length}} km</div>
-      <div>Anzahl Etappen: {{tour.steps}}</div>
-      {%if tour.gpx%}<a href="{{site.baseurl}}{{tour.gpx}}" download
-        >Download{%else%}Keine GPX Datei</a
-      >{%endif%} {%if tour.link%}<a href="{{site.baseurl}}{{tour.link}}">Link</a
-      >{%endif%}
-    </span>
-  </details>
-</div>
-{%endfor%}
-<!-- for screens >= 1280px (xl) -->
-<table class="w-full text-nowrap max-xl:hidden">
-  <tr class="text-left">
-    <th>Tour</th>
-    <th>Länge</th>
-    <th>Etappen</th>
-    <th>GPX Datei</th>
-    <th>Zur Beschreibung</th>
-  </tr>
+<div class="grid gap-y-4 xl:gap-y-6">
   {%for tour in page.touren%}
-  <tr class="table-row">
-    <td>{{tour.name}}</td>
-    <td>{{tour.length}} km</td>
-    <td>{{tour.steps}}</td>
-    <td>
-      {%if tour.gpx%}
-      <a href="{{site.baseurl}}{{tour.gpx}}" download
-        >Download{%else%}Keine GPX Datei
-      </a>
-      {%endif%}
-    </td>
-    <td>
-      {%if tour.link%}
-      <a href="{{site.baseurl}}{{tour.link}}">Link</a>
-      {%endif%}
-    </td>
-  </tr>
+  <div class="details flex flex-col hover:cursor-pointer">
+    <details>
+      <summary>{{tour.name}}</summary>
+      <span class="flex w-full flex-col pt-3">
+        <div>Länge: {{tour.length}} km</div>
+        <div>Anzahl Etappen: {{tour.steps}}</div>
+        {%if tour.gpx%}
+          <a href="{{site.baseurl}}{{tour.gpx}}" download class="w-min text-nowrap">
+            Download GPX
+          </a>
+        {%else%}
+          Keine GPX Datei
+        {%endif%}
+        {%if tour.link%}
+          <a href="{{site.baseurl}}{{tour.link}}">
+            Beschreibung
+          </a>
+        {%endif%}
+      </span>
+    </details>
+  </div>
   {%endfor%}
-</table>
-<div class="w-full">
-  <p class="flex justify-end pt-4 text-lime-600/50 xl:pt-8">
-    Zuletzt aktualisiert {{page.date}}
-  </p>
+  </div>
+  <h2 class="mt-12 xl:mt-20">In Planung</h2>
+  <div class="grid gap-y-4 xl:gap-y-6">
+  {%for tour in page.planned%}
+  <div class="details flex flex-col hover:cursor-pointer">
+    <details>
+      <summary>{{tour.name}}</summary>
+      <span class="flex w-full flex-col pt-3">
+        <div>Länge: {{tour.length}} km</div>
+        <div>Anzahl Etappen: {{tour.steps}}</div>
+        {%if tour.gpx%}
+          <a href="{{site.baseurl}}{{tour.gpx}}" download class="w-min text-nowrap">
+            Download GPX
+          </a>
+          {%else%}
+            Keine GPX Datei
+        {%endif%} {%if tour.link%}
+        <a href="{{site.baseurl}}{{tour.link}}">
+          Beschreibung
+        </a>
+        {%endif%}
+      </span>
+    </details>
+  </div>
+  {%endfor%}
+  <div class="w-full">
+    <p class="flex justify-end text-lime-600/70">
+      Zuletzt aktualisiert {{page.date}}
+    </p>
+  </div>
 </div>

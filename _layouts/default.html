@@ -23,16 +23,16 @@
   </head>
 
   <body
-    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base"
+    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base bg-linear-to-t from-amber-100 to-amber-50"
   >
     {%if page.header%}
-    <header class="flex-0 fixed left-0 top-0 z-10 h-20 w-full xl:h-48">
+    <header class="flex-0 fixed left-0 top-0 z-20 h-12 w-full xl:h-24">
       {% include header.html %}
     </header>
     {%endif%}
     <!-- check responsive styling upon 1280px (xl) breakpoint -->
     <main
-      class="mt-20 h-full w-full flex-1 overflow-y-auto px-8 pb-12 pt-8 xl:mt-48 xl:px-0 xl:pb-24 xl:pt-12"
+      class="mt-12 xl:mt-24 h-full w-full flex-1 overflow-y-auto px-8 pb-12 pt-12 xl:px-0 xl:pb-20 xl:pt-20"
       id="main-container"
     >
       <div class="relative mx-auto max-w-6xl">{{content}}</div>
