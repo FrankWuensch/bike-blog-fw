@@ -6,7 +6,7 @@
     <link href="src/fonts.css" rel="stylesheet" />
     <link href="dist/output.css" rel="stylesheet" />
     <link rel="icon" href="src/fahrrad_symbol_bw.png" />
-    <title>Bike Blog FW</title>
+    <title>Tour 2025</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -109,92 +109,39 @@
       class="overflow-y-auto flex-1 px-8 pt-16 pb-12 mt-12 w-full h-full xl:mt-24 xl:px-0 xl:pb-20 xl:pt-20"
       id="main-container"
     >
-      <div class="relative mx-auto max-w-6xl"><h2>Bisherige Touren</h2>
-<div class="grid gap-y-4 xl:gap-y-6">
-  
-  <div class="flex flex-col details hover:cursor-pointer">
-    <details>
-      <summary>Bodensee Rundtour 2022</summary>
-      <span class="flex flex-col pt-3 w-full">
-        <div>Länge: 535 km</div>
-        <div>Anzahl Etappen: 5</div>
-        
-          Keine GPX Datei
-        
-        
-      </span>
-    </details>
-  </div>
-  
-  <div class="flex flex-col details hover:cursor-pointer">
-    <details>
-      <summary>Kirchheim - Garmisch-Partenkirchen - Kirchheim 2023</summary>
-      <span class="flex flex-col pt-3 w-full">
-        <div>Länge: 617 km</div>
-        <div>Anzahl Etappen: 9</div>
-        
-          <a href="src/gpx_files/2023.gpx" download class="w-min text-nowrap">
-            Download GPX
-          </a>
-        
-        
-          <a href="2023.html">
-            Beschreibung
-          </a>
-        
-      </span>
-    </details>
-  </div>
-  
-  <div class="flex flex-col details hover:cursor-pointer">
-    <details>
-      <summary>Oberstdorf - Flensburg - Westerland 2024</summary>
-      <span class="flex flex-col pt-3 w-full">
-        <div>Länge: 1562 km</div>
-        <div>Anzahl Etappen: 19</div>
-        
-          <a href="src/gpx_files/2024.gpx" download class="w-min text-nowrap">
-            Download GPX
-          </a>
-        
-        
-          <a href="2024.html">
-            Beschreibung
-          </a>
-        
-      </span>
-    </details>
-  </div>
-  
-  </div>
-  <h2 class="mt-12 xl:mt-20">In Planung</h2>
-  <div class="grid gap-y-4 xl:gap-y-6">
-  
-  <div class="flex flex-col details hover:cursor-pointer">
-    <details>
-      <summary>Kirchheim - Oslo 2025</summary>
-      <span class="flex flex-col pt-3 w-full">
-        <div>Länge: 1825 km</div>
-        <div>Anzahl Etappen: ca. 21</div>
-        
-          <a href="src/gpx_files/KT-Oslo.gpx" download class="w-min text-nowrap">
-            Download GPX
-          </a>
-           
-        <a href="2025.html">
-          Beschreibung
-        </a>
-        
-      </span>
-    </details>
-  </div>
-  
-  <div class="w-full">
-    <p class="flex justify-end text-lime-600/70">
-      Zuletzt aktualisiert 13.04.2025
-    </p>
-  </div>
-</div>
+      <div class="relative mx-auto max-w-6xl"><h4 id="30092025---21102025">30.09.2025 - 21.10.2025</h4>
+
+<h1 id="oberstdorf---flensburg---westerland">Oberstdorf - Flensburg - Westerland</h1>
+
+<details open="">
+  <summary class="hover:cursor-pointer">
+    Klicken, um Karte anzuzeigen oder zu verbergen.
+  </summary>
+  <div id="map" style="height: 520px; margin-top: 2rem;"></div>
+  <script>
+  const map = L.map("map").setView([48.64683407492267, 9.451204869722357], 13);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  const url = "src/gpx_files/KT-Oslo.gpx";
+  console.log(url);
+  const options = {
+    async: true,
+    polyline_options: { color: "red" },
+  };
+
+  const gpx = new L.GPX(url, options)
+    .on("loaded", (e) => {
+      map.fitBounds(e.target.getBounds());
+    })
+    .addTo(map);
+</script>
+
+</details>
+
+<p><br /></p>
 </div>
     </main>
 

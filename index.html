@@ -21,16 +21,17 @@ planned:
   - name: Kirchheim - Oslo 2025
     length: 1825
     steps: ca. 21
+    link: "2025.html"
     gpx: "src/gpx_files/KT-Oslo.gpx"
 ---
 
 <h2>Bisherige Touren</h2>
 <div class="grid gap-y-4 xl:gap-y-6">
   {%for tour in page.touren%}
-  <div class="details flex flex-col hover:cursor-pointer">
+  <div class="flex flex-col details hover:cursor-pointer">
     <details>
       <summary>{{tour.name}}</summary>
-      <span class="flex w-full flex-col pt-3">
+      <span class="flex flex-col pt-3 w-full">
         <div>Länge: {{tour.length}} km</div>
         <div>Anzahl Etappen: {{tour.steps}}</div>
         {%if tour.gpx%}
@@ -53,10 +54,10 @@ planned:
   <h2 class="mt-12 xl:mt-20">In Planung</h2>
   <div class="grid gap-y-4 xl:gap-y-6">
   {%for tour in page.planned%}
-  <div class="details flex flex-col hover:cursor-pointer">
+  <div class="flex flex-col details hover:cursor-pointer">
     <details>
       <summary>{{tour.name}}</summary>
-      <span class="flex w-full flex-col pt-3">
+      <span class="flex flex-col pt-3 w-full">
         <div>Länge: {{tour.length}} km</div>
         <div>Anzahl Etappen: {{tour.steps}}</div>
         {%if tour.gpx%}
