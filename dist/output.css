@@ -241,9 +241,6 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
-  }
   .flex {
     display: flex;
   }
@@ -405,17 +402,8 @@
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
   }
-  .pt-16 {
-    padding-top: calc(var(--spacing) * 16);
-  }
-  .pt-20 {
-    padding-top: calc(var(--spacing) * 20);
-  }
   .pb-12 {
     padding-bottom: calc(var(--spacing) * 12);
-  }
-  .pb-16 {
-    padding-bottom: calc(var(--spacing) * 16);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
