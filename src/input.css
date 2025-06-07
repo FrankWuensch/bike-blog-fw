@@ -74,7 +74,7 @@ main a[href] {
 }
 
 .details {
-  @apply px-8 py-4 bg-lime-100 rounded-2xl border border-lime-300 dark:bg-lime-950 dark:border-lime-700 border-spacing-2;
+  @apply px-8 py-4 bg-lime-100 rounded-2xl border border-lime-600 dark:bg-lime-950 dark:border-lime-700 border-spacing-2;
 }
 
 .error {
