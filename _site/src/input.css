@@ -5,6 +5,8 @@
 ::-webkit-scrollbar {
   visibility: hidden;
   display: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 details summary::marker {
@@ -58,7 +60,7 @@ h4 {
 }
 
 p {
-  @apply pb-4 leading-relaxed text-neutral-500;
+  @apply pb-4 leading-relaxed dark:text-neutral-300 text-neutral-600;
 }
 
 hr {
