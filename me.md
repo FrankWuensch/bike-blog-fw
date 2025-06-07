@@ -21,6 +21,5 @@ Sämtliche Empfehlungen basieren ausschließlich auf eigenen Erfahrungen und bez
 **Disclaimer und Haftungsausschluss**
 
 Bei den verlinkten Internetseiten handelt es sich nicht um Affiliate Links, sondern lediglich um die Webseiten der jeweils genannten Unterkunft oder
-Gastwirtschaft etc., sofern nicht anders gekennzeichnet. Desweiteren bin ich nicht für die Inhalte auf der von mir verlinkten Internetseiten zuständig.
-Bei Beanstandungen zum Inhalt der jeweiligen Seite bitte ich dennoch darum, mir eine Mail zu schreiben, dass ich den Link gegebenenfalls entfernen,
-oder die Daten auf meiner Seite aktualisieren kann.
+Gastwirtschaft etc., sofern nicht anders gekennzeichnet. Desweiteren bin ich nicht für die Inhalte auf der von mir verlinkten Internetseiten verantwortlich,
+sondern ausschließlich deren Urheber oder Betreiber.

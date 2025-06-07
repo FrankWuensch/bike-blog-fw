@@ -1,13 +1,5 @@
 @import "tailwindcss";
 @tailwind utilities;
-@import "tailwindcss/preflight"
-
-::-webkit-scrollbar {
-  visibility: hidden;
-  display: none;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
 
 details summary::marker {
   content: "";
@@ -26,7 +18,12 @@ details summary {
 }
 
 main {
-  @apply hyphens-auto;
+  @apply mx-auto w-full max-w-6xl hyphens-auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  &::-webkit-scrollbar { /* WebKit */
+      display: none;
+  }
 }
 
 i,

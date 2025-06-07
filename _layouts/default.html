@@ -33,10 +33,10 @@
     {%endif%}
     <!-- check responsive styling upon 1280px (xl) breakpoint -->
     <main
-      class="overflow-y-auto flex-1 px-8 pt-12 pb-12 mt-16 w-full h-full xl:mt-24 xl:px-0 xl:pb-20 xl:pt-20 dark:text-neutral-300 text-neutral-600"
+      class="overflow-y-auto flex-1 px-8 pt-12 pb-12 mt-16 w-full max-w-6xl h-full xl:mt-24 xl:px-0 xl:pb-20 xl:pt-20 dark:text-neutral-300 text-neutral-600"
       id="main-container"
     >
-      <div class="relative mx-auto max-w-6xl">{{content}}</div>
+      <div class="relative mx-auto w-full max-w-6xl">{{content}}</div>
     </main>
 
     <script>
