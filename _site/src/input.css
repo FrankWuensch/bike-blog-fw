@@ -1,7 +1,6 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
+@import "tailwindcss/preflight"
 
 ::-webkit-scrollbar {
   visibility: hidden;
@@ -35,39 +34,35 @@ em,
 }
 
 nav h1 {
-  @apply text-xl text-lime-600 xl:text-2xl;
+  @apply text-xl text-lime-600 dark:text-lime-300 xl:text-2xl;
 }
 
 nav .link-title {
-  @apply text-base text-lime-600 hover:text-lime-800 hover:underline hover:underline-offset-4;
+  @apply text-base text-lime-600 dark:text-lime-300 hover:text-lime-800 dark:hover:text-lime-100 hover:underline hover:underline-offset-4;
 }
 
 main h1 {
-  @apply pb-4 text-xl text-lime-600 xl:pb-8 xl:text-3xl;
+  @apply pb-4 text-xl text-lime-600 dark:text-lime-300 xl:pb-8 xl:text-3xl;
 }
 
 h2 {
-  @apply text-nowrap pb-3 text-lg text-lime-600 xl:pb-6 xl:text-2xl;
+  @apply pb-3 text-lg text-lime-600 dark:text-lime-300 text-nowrap xl:pb-6 xl:text-2xl;
 }
 
 h3 {
-  @apply text-nowrap pb-1.5 text-sm text-lime-600 xl:text-base;
+  @apply pb-1.5 text-sm text-lime-600 dark:text-lime-300 text-nowrap xl:text-base;
 }
 
 h4 {
-  @apply flex w-full justify-end pb-4 xl:pb-0;
+  @apply flex justify-end pb-4 w-full xl:pb-0;
 }
 
 p {
-  @apply pb-4 leading-relaxed;
+  @apply pb-4 leading-relaxed text-neutral-500;
 }
 
 hr {
-  @apply mx-8 mb-3 xl:mx-16 xl:mb-5;
-}
-
-th {
-  @apply pr-8 text-lime-600;
+  @apply mx-8 mb-3 xl:mx-16 xl:mb-5 text-neutral-500;
 }
 
 main img {
@@ -75,19 +70,11 @@ main img {
 }
 
 main a[href] {
-  @apply text-sky-600 hover:text-sky-800 hover:underline;
+  @apply text-sky-600 hover:text-sky-800 dark:text-sky-300 dark:hover:text-sky-600 hover:underline hover:underline-offset-4;
 }
 
 .details {
-  @apply border-spacing-2 rounded-2xl border border-lime-300 bg-lime-100 px-8 py-4;
-}
-
-.table-row {
-  @apply w-full odd:bg-lime-50 even:bg-lime-100;
-}
-
-.table-row>td {
-  @apply py-2;
+  @apply px-8 py-4 bg-lime-100 rounded-2xl border border-lime-300 dark:bg-lime-950 dark:border-lime-700 border-spacing-2;
 }
 
 .error {

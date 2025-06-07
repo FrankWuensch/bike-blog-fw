@@ -12,7 +12,11 @@ Mein Name ist Frank Wünsch, ich bin am 04.01.1995 in Stuttgart (BW) geboren und
 mehrtägigen Ganztagestouren mit dem Fahrrad begeistert. Alle Touren die ich hier vorstelle habe ich selbst geplant und auch selbst dokumentiert.
 Sämtliche Empfehlungen basieren ausschließlich auf eigenen Erfahrungen und beziehen sich auf den Zeitpunkt meines Besuches.
 
+<br/>
+
 ---
+
+<br/>
 
 **Disclaimer und Haftungsausschluss**
 

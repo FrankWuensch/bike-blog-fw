@@ -1,10 +1,19 @@
-<nav class="relative h-full w-full bg-lime-200">
-  <span class="flex h-full flex-row items-center gap-x-12 xl:mx-auto xl:max-w-6xl">
-    <img src="{{site.baseurl}}src/fahrrad_symbol.png" class="h-full" />
+<nav class="relative w-full h-full bg-lime-200 dark:bg-lime-900">
+  <span class="flex flex-row gap-x-12 items-center h-full xl:mx-auto xl:max-w-6xl">
+    <img src="{{site.baseurl}}src/fahrrad_symbol.png" class="h-full" id="image-lightmode"/>
+    <!-- in case of darkmode -->
+    <script>
+      const img = document.querySelector('#image-lightmode');
+      if (document.documentElement.classList.contains('dark')) {
+        img.src = "{{site.baseurl}}src/fahrrad_symbol_bw.png";
+      } else {
+        img.src = "{{site.baseurl}}src/fahrrad_symbol.png";
+      }
+    </script>
     <!-- for mobile screens < 1280px -->
-    <h1 class="flex items-center justify-center xl:hidden">{{site.title}}</h1>
+    <h1 class="flex justify-center items-center xl:hidden">{{site.title}}</h1>
     <div
-      class="absolute right-0 top-0 flex h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer xl:hidden"
+      class="flex absolute top-0 right-0 justify-center items-center w-20 h-full bg-white/50 dark:bg-black/50 hover:cursor-pointer xl:hidden"
       id="menu"
     >
       <img
@@ -13,14 +22,14 @@
         class="w-[75%]"
       />
       <div
-        class="fixed right-0 top-0 z-10 mt-16 hidden w-[75%] rounded-bl-xl bg-lime-50 shadow-md"
+        class="fixed right-0 top-0 z-10 mt-16 hidden w-[75%] rounded-bl-xl bg-lime-50 dark:bg-lime-950 shadow-md"
         id="menu-content"
       >
-        <span class="flex w-full flex-col divide-y-2 divide-lime-200">
+        <span class="flex flex-col w-full divide-y-2 divide-lime-200">
           {%for link in site.nav_links%}
           <a
             href="{%if link.href%}{{link.href}}{%endif%}"
-            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800"
+            class="p-4 w-full text-xl text-lime-600 dark:text-lime-300 text-end hover:bg-lime-100 dark:hover:bg-lime-900 hover:text-lime-800 dark:hover:text-lime-200"
             >{{link.name}}
           </a>
           {%endfor%}
@@ -28,14 +37,14 @@
       </div>
     </div>
     <!-- for screens >= 1280px (xl) -->
-    <span class="flex w-full items-center justify-between max-xl:hidden">
+    <span class="flex justify-between items-center w-full max-xl:hidden">
       <h1>{{site.title}}</h1>
       <ul class="flex flex-row gap-x-8">
         {%for link in site.nav_links%}
         <li>
           <a
             href="{%if link.href%}{{link.href}}{%endif%}"
-            class="link-title py-4 pl-4"
+            class="py-4 pl-4 link-title"
             >{{link.name}}
           </a>
         </li>

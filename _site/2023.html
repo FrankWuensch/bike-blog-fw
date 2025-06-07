@@ -13,6 +13,7 @@
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
     />
+    <script src="src/darkmode.js"></script>
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script
       src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -23,17 +24,26 @@
   </head>
 
   <body
-    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base bg-gradient-to-r from-amber-50 from-10% via-amber-50 via-70% to-amber-100"
+    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base bg-gradient-to-r from-lime-100 dark:from-lime-950 from-10% via-lime-100 dark:via-lime-950 via-70% to-lime-200 dark:to-lime-900"
   >
     
     <header class="fixed top-0 left-0 z-20 w-full h-16 flex-0 xl:h-24">
-      <nav class="relative h-full w-full bg-lime-200">
-  <span class="flex h-full flex-row items-center gap-x-12 xl:mx-auto xl:max-w-6xl">
-    <img src="src/fahrrad_symbol.png" class="h-full" />
+      <nav class="relative w-full h-full bg-lime-200 dark:bg-lime-900">
+  <span class="flex flex-row gap-x-12 items-center h-full xl:mx-auto xl:max-w-6xl">
+    <img src="src/fahrrad_symbol.png" class="h-full" id="image-lightmode"/>
+    <!-- in case of darkmode -->
+    <script>
+      const img = document.querySelector('#image-lightmode');
+      if (document.documentElement.classList.contains('dark')) {
+        img.src = "src/fahrrad_symbol_bw.png";
+      } else {
+        img.src = "src/fahrrad_symbol.png";
+      }
+    </script>
     <!-- for mobile screens < 1280px -->
-    <h1 class="flex items-center justify-center xl:hidden">Bike Blog FW</h1>
+    <h1 class="flex justify-center items-center xl:hidden">Bike Blog FW</h1>
     <div
-      class="absolute right-0 top-0 flex h-full w-20 items-center justify-center bg-white/50 hover:cursor-pointer xl:hidden"
+      class="flex absolute top-0 right-0 justify-center items-center w-20 h-full bg-white/50 dark:bg-black/50 hover:cursor-pointer xl:hidden"
       id="menu"
     >
       <img
@@ -42,26 +52,26 @@
         class="w-[75%]"
       />
       <div
-        class="fixed right-0 top-0 z-10 mt-16 hidden w-[75%] rounded-bl-xl bg-lime-50 shadow-md"
+        class="fixed right-0 top-0 z-10 mt-16 hidden w-[75%] rounded-bl-xl bg-lime-50 dark:bg-lime-950 shadow-md"
         id="menu-content"
       >
-        <span class="flex w-full flex-col divide-y-2 divide-lime-200">
+        <span class="flex flex-col w-full divide-y-2 divide-lime-200">
           
           <a
             href="index.html"
-            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800"
+            class="p-4 w-full text-xl text-lime-600 dark:text-lime-300 text-end hover:bg-lime-100 dark:hover:bg-lime-900 hover:text-lime-800 dark:hover:text-lime-200"
             >Start
           </a>
           
           <a
             href="me.html"
-            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800"
+            class="p-4 w-full text-xl text-lime-600 dark:text-lime-300 text-end hover:bg-lime-100 dark:hover:bg-lime-900 hover:text-lime-800 dark:hover:text-lime-200"
             >Über mich
           </a>
           
           <a
             href="equipment.html"
-            class="w-full p-4 text-end text-xl text-lime-600 hover:bg-lime-100 hover:text-lime-800"
+            class="p-4 w-full text-xl text-lime-600 dark:text-lime-300 text-end hover:bg-lime-100 dark:hover:bg-lime-900 hover:text-lime-800 dark:hover:text-lime-200"
             >Ausrüstung
           </a>
           
@@ -69,14 +79,14 @@
       </div>
     </div>
     <!-- for screens >= 1280px (xl) -->
-    <span class="flex w-full items-center justify-between max-xl:hidden">
+    <span class="flex justify-between items-center w-full max-xl:hidden">
       <h1>Bike Blog FW</h1>
       <ul class="flex flex-row gap-x-8">
         
         <li>
           <a
             href="index.html"
-            class="link-title py-4 pl-4"
+            class="py-4 pl-4 link-title"
             >Start
           </a>
         </li>
@@ -84,7 +94,7 @@
         <li>
           <a
             href="me.html"
-            class="link-title py-4 pl-4"
+            class="py-4 pl-4 link-title"
             >Über mich
           </a>
         </li>
@@ -92,7 +102,7 @@
         <li>
           <a
             href="equipment.html"
-            class="link-title py-4 pl-4"
+            class="py-4 pl-4 link-title"
             >Ausrüstung
           </a>
         </li>
@@ -106,7 +116,7 @@
     
     <!-- check responsive styling upon 1280px (xl) breakpoint -->
     <main
-      class="overflow-y-auto flex-1 px-8 pt-12 pb-12 mt-16 w-full h-full xl:mt-24 xl:px-0 xl:pb-20 xl:pt-20"
+      class="overflow-y-auto flex-1 px-8 pt-12 pb-12 mt-16 w-full h-full xl:mt-24 xl:px-0 xl:pb-20 xl:pt-20 dark:text-neutral-300 text-neutral-700"
       id="main-container"
     >
       <div class="relative mx-auto max-w-6xl"><h4 id="21082023---29082023">21.08.2023 - 29.08.2023</h4>
