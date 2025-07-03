@@ -457,9 +457,6 @@
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
   }
-  .pb-1 {
-    padding-bottom: calc(var(--spacing) * 1);
-  }
   .pb-1\.5 {
     padding-bottom: calc(var(--spacing) * 1.5);
   }
@@ -497,10 +494,6 @@
   .leading-relaxed {
     --tw-leading: var(--leading-relaxed);
     line-height: var(--leading-relaxed);
-  }
-  .font-black {
-    --tw-font-weight: var(--font-weight-black);
-    font-weight: var(--font-weight-black);
   }
   .text-nowrap {
     text-wrap: nowrap;
@@ -807,14 +800,6 @@ main {
 i, em, .font-italic {
   font-family: 'InterItalic';
 }
-nav .active {
-  --tw-font-weight: var(--font-weight-black);
-  font-weight: var(--font-weight-black);
-  color: var(--color-lime-800);
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-lime-100);
-  }
-}
 nav h1 {
   font-size: var(--text-xl);
   line-height: var(--tw-leading, var(--text-xl--line-height));
@@ -855,6 +840,12 @@ nav .link-title {
         color: var(--color-lime-100);
       }
     }
+  }
+}
+nav .active {
+  color: var(--color-lime-800);
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-lime-100);
   }
 }
 main h1 {
@@ -1066,10 +1057,6 @@ main a[href] {
   syntax: "*";
   inherits: false;
 }
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -1227,7 +1214,6 @@ main a[href] {
       --tw-gradient-via-position: 50%;
       --tw-gradient-to-position: 100%;
       --tw-leading: initial;
-      --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
