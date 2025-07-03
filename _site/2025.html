@@ -162,34 +162,29 @@
     },
 
     onAdd: function () {
-      const container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom leaflet-control-zoom");
+      // Create the container that mimics Leaflet's zoom control group
+      const div = L.DomUtil.create("div", "leaflet-control-zoom leaflet-bar");
 
-      container.style.backgroundColor = "white";
-      container.style.width = "32px";
-      container.style.height = "30px";
-      container.style.lineHeight = "30px";
-      container.style.fontSize = "22px";
-      container.style.font = "bold";
-      if (darkmode) {
-        container.style.color = "var(--color-sky-300)";
-      } else {
-        container.style.color = "var(--color-sky-600)";
-      }
-      container.style.textAlign = "center";
-      container.style.cursor = "pointer";
+      // Create the reset button
+      const container = L.DomUtil.create("a", "leaflet-bar-part", div);
+      container.href = "#";
       container.title = "Reset view";
-      container.innerHTML = "⟳"; // or any icon you prefer
+      container.style.fontSize = "22px";
+      container.style.lineHeight = "30px";
+      container.textAlign = "center";
+      container.innerHTML = "⟳";
 
-      // Prevent clicks from propagating to the map
-      L.DomEvent.disableClickPropagation(container);
+      // Match styling and behavior
+      L.DomEvent.on(container, "click", L.DomEvent.stopPropagation)
+                .on(container, "click", L.DomEvent.preventDefault)
+                .on(container, "click", () => {
+                  if (gpxBounds) {
+                    map.fitBounds(gpxBounds, { padding: [40, 40] });
+                  }
+                });
 
-      container.onclick = function () {
-        if (gpxBounds) {
-          map.fitBounds(gpxBounds, { padding: [40, 40] });
-        }
-      };
-
-      return container;
+      // Return the full control div (not just the link)
+      return div;
     }
   });
 
