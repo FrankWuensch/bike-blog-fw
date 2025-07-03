@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             navLink.classList.remove("active");
         }
-        if (actualLink === homeLink || actualLink === baseurl + "/") {
+        if (actualLink === homeLink || actualLink === baseurl) {
             home.classList.add("active");
         }
     });
