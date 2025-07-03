@@ -6,7 +6,7 @@ header: true
 
 ## Über mich
 
-<img src="{{site.baseurl}}src/images/start.JPG" alt="ich" class="h-[50%]">
+<img src="{{site.baseurl}}src/images/start.JPG" alt="ich" class="min-h-[25vh] max-sm:min-w-[80vw] xl:max-h-[60vh] object-cover" loading="asynch">
 
 Mein Name ist Frank Wünsch, ich bin am 04.01.1995 in Stuttgart (BW) geboren und bin seit meiner Bodenseerundtour 2022 von der Langstrecke bzw.
 mehrtägigen Ganztagestouren mit dem Fahrrad begeistert. Alle Touren die ich hier vorstelle habe ich selbst geplant und auch selbst dokumentiert.

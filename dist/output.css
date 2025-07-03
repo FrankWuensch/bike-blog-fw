@@ -274,6 +274,9 @@
   .table {
     display: table;
   }
+  .aspect-auto {
+    aspect-ratio: auto;
+  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -286,11 +289,26 @@
   .h-\[50\%\] {
     height: 50%;
   }
+  .h-\[50vh\] {
+    height: 50vh;
+  }
   .h-full {
     height: 100%;
   }
+  .max-h-\[50vh\] {
+    max-height: 50vh;
+  }
+  .max-h-\[60vh\] {
+    max-height: 60vh;
+  }
   .max-h-full {
     max-height: 100%;
+  }
+  .min-h-\[25vh\] {
+    min-height: 25vh;
+  }
+  .min-h-\[50vh\] {
+    min-height: 50vh;
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -312,6 +330,9 @@
   }
   .max-w-6xl {
     max-width: var(--container-6xl);
+  }
+  .min-w-\[80vw\] {
+    min-width: 80vw;
   }
   .flex-0 {
     flex: 0;
@@ -441,6 +462,9 @@
   .to-lime-200 {
     --tw-gradient-to: var(--color-lime-200);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .object-cover {
+    object-fit: cover;
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -603,6 +627,41 @@
       display: none;
     }
   }
+  .max-xl\:max-h-\[60vh\] {
+    @media (width < 80rem) {
+      max-height: 60vh;
+    }
+  }
+  .max-sm\:min-h-\[25vh\] {
+    @media (width < 40rem) {
+      min-height: 25vh;
+    }
+  }
+  .max-sm\:min-w-\[80vw\] {
+    @media (width < 40rem) {
+      min-width: 80vw;
+    }
+  }
+  .sm\:max-h-50 {
+    @media (width >= 40rem) {
+      max-height: calc(var(--spacing) * 50);
+    }
+  }
+  .sm\:max-h-\[50vh\] {
+    @media (width >= 40rem) {
+      max-height: 50vh;
+    }
+  }
+  .sm\:max-h-\[60vh\] {
+    @media (width >= 40rem) {
+      max-height: 60vh;
+    }
+  }
+  .sm\:min-w-\[80vw\] {
+    @media (width >= 40rem) {
+      min-width: 80vw;
+    }
+  }
   .xl\:mx-16 {
     @media (width >= 80rem) {
       margin-inline: calc(var(--spacing) * 16);
@@ -636,6 +695,16 @@
   .xl\:h-24 {
     @media (width >= 80rem) {
       height: calc(var(--spacing) * 24);
+    }
+  }
+  .xl\:h-\[50vw\] {
+    @media (width >= 80rem) {
+      height: 50vw;
+    }
+  }
+  .xl\:max-h-\[60vh\] {
+    @media (width >= 80rem) {
+      max-height: 60vh;
     }
   }
   .xl\:w-\[75\%\] {
