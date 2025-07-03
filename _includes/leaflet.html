@@ -32,13 +32,14 @@
     },
 
     onAdd: function () {
-      const container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
+      const container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom leaflet-control-zoom");
 
       container.style.backgroundColor = "white";
       container.style.width = "32px";
       container.style.height = "30px";
       container.style.lineHeight = "30px";
-      container.style.fontSize = "20px";
+      container.style.fontSize = "22px";
+      container.style.font = "bold";
       if (darkmode) {
         container.style.color = "var(--color-sky-300)";
       } else {
