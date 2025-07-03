@@ -31,12 +31,16 @@ planned:
 <div class="grid gap-y-4 xl:gap-y-6">
   {%for tour in page.touren%}
   <div class="flex flex-col details hover:cursor-pointer">
-    <details>
-      <summary class="flex flex-row justify-between">
-        <div>{{tour.name}}</div>
-        <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
-        </svg>
+    <details class="group">
+      <summary class="flex gap-4 justify-between">
+        <div class="flex-1">
+          {{ tour.name }}
+        </div>
+        <div class="flex items-center">
+          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
+          </svg>
+        </div>
       </summary>
       <span class="flex flex-col pt-3 w-full">
         <div>Länge: {{tour.length}} km</div>
@@ -62,12 +66,16 @@ planned:
   <div class="grid gap-y-4 xl:gap-y-6">
   {%for tour in page.planned%}
   <div class="flex flex-col details hover:cursor-pointer">
-    <details>
-      <summary class="flex flex-row justify-between">
-        <div>{{tour.name}}</div>
-        <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
-        </svg>
+    <details class="group">
+      <summary class="flex gap-4 justify-between">
+        <div class="flex-1">
+          {{ tour.name }}
+        </div>
+        <div class="flex items-center">
+          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
+          </svg>
+        </div>
       </summary>
       <span class="flex flex-col pt-3 w-full">
         <div>Länge: {{tour.length}} km</div>
