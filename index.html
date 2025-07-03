@@ -32,7 +32,12 @@ planned:
   {%for tour in page.touren%}
   <div class="flex flex-col details hover:cursor-pointer">
     <details>
-      <summary>{{tour.name}}</summary>
+      <summary class="flex flex-row justify-between">
+        <div>{{tour.name}}</div>
+        <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
+        </svg>
+      </summary>
       <span class="flex flex-col pt-3 w-full">
         <div>Länge: {{tour.length}} km</div>
         <div>Anzahl Etappen: {{tour.steps}}</div>
@@ -58,7 +63,12 @@ planned:
   {%for tour in page.planned%}
   <div class="flex flex-col details hover:cursor-pointer">
     <details>
-      <summary>{{tour.name}}</summary>
+      <summary class="flex flex-row justify-between">
+        <div>{{tour.name}}</div>
+        <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
+        </svg>
+      </summary>
       <span class="flex flex-col pt-3 w-full">
         <div>Länge: {{tour.length}} km</div>
         <div>Anzahl Etappen: {{tour.steps}}</div>
