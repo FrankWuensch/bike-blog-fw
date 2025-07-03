@@ -1,4 +1,5 @@
 <script>
+  let darkmode = document.documentElement.classList.contains('dark');
   const map = L.map("map", {
     zoomSnap: 0.1,
     zoomDelta: 0.1
@@ -15,9 +16,51 @@
     polyline_options: { color: "red" },
   };
 
+  let gpxBounds = null;
+
   const gpx = new L.GPX(url, options)
     .on("loaded", (e) => {
-      map.fitBounds(e.target.getBounds(), { padding: [40, 40] });
+      gpxBounds = e.target.getBounds();
+      map.fitBounds(gpxBounds, { padding: [40, 40] });
     })
     .addTo(map);
+
+  // Custom Leaflet control for Reset View
+  const resetControl = L.Control.extend({
+    options: {
+      position: "topleft"
+    },
+
+    onAdd: function () {
+      const container = L.DomUtil.create("div", "leaflet-bar leaflet-control leaflet-control-custom");
+
+      container.style.backgroundColor = "white";
+      container.style.width = "32px";
+      container.style.height = "30px";
+      container.style.lineHeight = "30px";
+      container.style.fontSize = "20px";
+      if (darkmode) {
+        container.style.color = "var(--color-sky-300)";
+      } else {
+        container.style.color = "var(--color-sky-600)";
+      }
+      container.style.textAlign = "center";
+      container.style.cursor = "pointer";
+      container.title = "Reset view";
+      container.innerHTML = "⟳"; // or any icon you prefer
+
+      // Prevent clicks from propagating to the map
+      L.DomEvent.disableClickPropagation(container);
+
+      container.onclick = function () {
+        if (gpxBounds) {
+          map.fitBounds(gpxBounds, { padding: [40, 40] });
+        }
+      };
+
+      return container;
+    }
+  });
+
+  map.addControl(new resetControl());
 </script>
