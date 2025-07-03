@@ -32,6 +32,10 @@ em,
   font-family: 'InterItalic';
 }
 
+nav .active {
+  @apply font-black text-lime-800 dark:text-lime-100;
+}
+
 nav h1 {
   @apply text-xl text-lime-600 dark:text-lime-300 xl:text-2xl;
 }
