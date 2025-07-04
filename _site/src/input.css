@@ -37,11 +37,11 @@ nav h1 {
 }
 
 nav .link-title {
-  @apply text-base text-lime-600 dark:text-lime-300 hover:text-lime-800 dark:hover:text-lime-100 hover:underline hover:underline-offset-4;
+  @apply text-base text-lime-600 dark:text-lime-300 hover:text-lime-900 dark:hover:text-lime-50 hover:underline hover:underline-offset-4;
 }
 
 nav .active {
-  @apply text-lime-800 dark:text-lime-100;
+  @apply text-lime-900 dark:text-lime-50;
 }
 
 main h1 {

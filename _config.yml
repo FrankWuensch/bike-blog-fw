@@ -31,7 +31,7 @@ github_username:  frankwuensch95
 
 title: Bike Blog FW
 nav_links:
-  - href: "index.html"
+  - href: "/"
     name: Start
   - href: "me.html"
     name: Über mich

@@ -14,7 +14,6 @@
     --color-lime-300: oklch(89.7% 0.196 126.665);
     --color-lime-600: oklch(64.8% 0.2 131.684);
     --color-lime-700: oklch(53.2% 0.157 131.589);
-    --color-lime-800: oklch(45.3% 0.124 130.933);
     --color-lime-900: oklch(40.5% 0.101 131.063);
     --color-lime-950: oklch(27.4% 0.072 132.109);
     --color-sky-300: oklch(82.8% 0.111 230.318);
@@ -39,7 +38,6 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
-    --font-weight-black: 900;
     --leading-relaxed: 1.625;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
@@ -678,7 +676,7 @@ nav .link-title {
   color: var(--color-lime-600);
   &:hover {
     @media (hover: hover) {
-      color: var(--color-lime-800);
+      color: var(--color-lime-900);
     }
   }
   &:hover {
@@ -697,15 +695,15 @@ nav .link-title {
   @media (prefers-color-scheme: dark) {
     &:hover {
       @media (hover: hover) {
-        color: var(--color-lime-100);
+        color: var(--color-lime-50);
       }
     }
   }
 }
 nav .active {
-  color: var(--color-lime-800);
+  color: var(--color-lime-900);
   @media (prefers-color-scheme: dark) {
-    color: var(--color-lime-100);
+    color: var(--color-lime-50);
   }
 }
 main h1 {
