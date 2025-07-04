@@ -43,7 +43,7 @@
         {%for link in site.nav_links%}
         <li>
           <a
-            href="{%if link.href%}{{link.href}}{%endif%}"
+            href="{%if link.href%}{{site.baseurl}}{{link.href}}{%endif%}"
             class="py-4 pl-4 link-title"
             >{{link.name}}
           </a>
