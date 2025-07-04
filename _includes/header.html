@@ -28,7 +28,7 @@
         <span class="flex flex-col w-full divide-y-2 divide-lime-600 dark:divide-lime-300">
           {%for link in site.nav_links%}
           <a
-            href="{%if link.href%}{{link.href}}{%endif%}"
+            href="{%if link.href%}{{site.baseurl}}{{link.href}}{%endif%}"
             class="p-4 w-full text-xl text-end link-title hover:bg-lime-100 dark:hover:bg-lime-900"
             >{{link.name}}
           </a>
