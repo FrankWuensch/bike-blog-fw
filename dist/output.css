@@ -215,9 +215,6 @@
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
-  .z-3 {
-    z-index: 3;
-  }
   .z-10 {
     z-index: 10;
   }
@@ -269,9 +266,6 @@
   .table {
     display: table;
   }
-  .h-3 {
-    height: calc(var(--spacing) * 3);
-  }
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
@@ -280,9 +274,6 @@
   }
   .h-16 {
     height: calc(var(--spacing) * 16);
-  }
-  .h-93 {
-    height: calc(var(--spacing) * 93);
   }
   .h-full {
     height: 100%;
@@ -510,9 +501,6 @@
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
-  }
-  .\[c\:u�\10 ��HeX\%��D�\@\1c �1���Ð\8 ��I\.�U���\7f �\3 \#Z����l��W��Z��\] {
-    c: u���HeX%��D�@�1���Ð��I.�U����#Z����l��W��Z��;
   }
   .group-open\:rotate-180 {
     &:is(:where(.group):is([open], :popover-open, :open) *) {
