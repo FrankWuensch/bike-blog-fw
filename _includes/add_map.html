@@ -2,6 +2,13 @@
   <summary class="hover:cursor-pointer">
     Klicken, um Karte anzuzeigen oder zu verbergen.
   </summary>
-  <div id="map" style="height: 55vh; margin-top: 2rem;"></div>
-  {%include leaflet.html%}
+
+  <div class="h-[55vh] flex flex-col mt-4 wrapper">
+    <!-- Map: 70% -->
+    <div id="map" class="basis-[70%] grow-0 shrink-0"></div>
+    <!-- Elevation: 30% -->
+    <div id="elevation" class="basis-[30%] grow-0 shrink-0 max-h-[30%] overflow-hidden"></div>
+  </div>
+
+  {% include leaflet.html %}
 </details>
