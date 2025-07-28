@@ -7,3 +7,8 @@
   font-family: 'InterItalic';
   src: url('fonts/InterVariable-Italic.ttf');
 }
+
+@font-face {
+  font-family: 'NotoSansMono';
+  src: url('fonts/NotoSansMono.ttf');
+}
