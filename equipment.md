@@ -24,8 +24,9 @@ Anzahl: 2
 
 ## Kameras
 
-Nikon Coolpix P950 (KB 18-2000 mm optischer Zoom) \
-DJI Osmo Action 4 (verwendete Einstellung: 2K | 50 fps)
+Nikon Coolpix P950 (KB 24-2000 mm optischer Zoom) \
+DJI Osmo Action 4 (verwendete Einstellung: 2,7K | 50 fps | manuelle Belichtung) \
+Insta360 X3 (verwendete Einstellung: 5K | 30 fps | manuelle Belichtung)
 
 ---
 

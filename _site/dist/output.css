@@ -894,6 +894,30 @@ main a[href] {
 .height-focus-group line, .height-focus-group text {
   display: none !important;
 }
+.elevation-control .mouse-focus-label-text {
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
+  color: var(--color-gray-800);
+  filter: none;
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-gray-300);
+  }
+}
+.elevation-control .mouse-focus-label-rect {
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
+  color: var(--color-gray-800);
+  filter: none;
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-gray-300);
+  }
+  fill: #9d3 !important;
+}
+@media (prefers-color-scheme: dark) {
+  .elevation-control .mouse-focus-label-rect {
+    fill: #000 !important;
+  }
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;

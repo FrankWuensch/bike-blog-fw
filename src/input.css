@@ -116,3 +116,18 @@ main a[href] {
 .height-focus-group line, .height-focus-group text {
   display: none !important;
 }
+
+.elevation-control .mouse-focus-label-text {
+  @apply font-light text-gray-800 dark:text-gray-300 filter-none;
+}
+
+.elevation-control .mouse-focus-label-rect {
+  @apply font-light text-gray-800 dark:text-gray-300 filter-none;
+  fill: #9d3 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .elevation-control .mouse-focus-label-rect {
+    fill: #000 !important;
+  }
+}

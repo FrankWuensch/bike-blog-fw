@@ -533,6 +533,9 @@
   .text-wrap {
     text-wrap: wrap;
   }
+  .text-gray-800 {
+    color: var(--color-gray-800);
+  }
   .text-lime-600 {
     color: var(--color-lime-600);
   }
@@ -763,6 +766,11 @@
     @media (prefers-color-scheme: dark) {
       --tw-gradient-to: var(--color-lime-900);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+  }
+  .dark\:text-gray-300 {
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-300);
     }
   }
   .dark\:text-lime-300 {
@@ -1049,6 +1057,30 @@ main a[href] {
 }
 .height-focus-group line, .height-focus-group text {
   display: none !important;
+}
+.elevation-control .mouse-focus-label-text {
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
+  color: var(--color-gray-800);
+  filter: none;
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-gray-300);
+  }
+}
+.elevation-control .mouse-focus-label-rect {
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
+  color: var(--color-gray-800);
+  filter: none;
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-gray-300);
+  }
+  fill: #9d3 !important;
+}
+@media (prefers-color-scheme: dark) {
+  .elevation-control .mouse-focus-label-rect {
+    fill: #000 !important;
+  }
 }
 @property --tw-rotate-x {
   syntax: "*";
