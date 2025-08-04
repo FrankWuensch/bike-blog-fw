@@ -133,12 +133,13 @@
 
   <div class="h-[55vh] flex flex-col mt-4 wrapper">
     <!-- Map: 70% -->
-    <div id="map" class="basis-[70%] grow-0 shrink-0"></div>
+    <div id="map" class="basis-[60%] grow-0 shrink-0"></div>
     <!-- Elevation: 30% -->
-    <div id="elevation" class="basis-[30%] grow-0 shrink-0 max-h-[30%] overflow-hidden"></div>
+    <div id="elevation" class="basis-[40%] grow-0 shrink-0 max-h-[40%] overflow-hidden"></div>
   </div>
 
   <script>
+document.addEventListener("DOMContentLoaded", () => {
   let darkmode = document.documentElement.classList.contains("dark");
 
   // Initialize Leaflet map
@@ -218,30 +219,40 @@
   // Adjust SVG size once it's added
   const targetNode = document.querySelector(".wrapper");
   const config = { childList: true, subtree: true };
-  const axisTexts = document.querySelectorAll("g.axis");
-  for (const axisText of axisTexts) {
-    axisText.setAttribute("preserveAspectRatio", "true");
-  }
   const callback = (mutationList, observer) => {
     for (const mutation of mutationList) {
       if (mutation.type === "childList") {
-        const svgElement = document.querySelector("svg.background");
-        if (svgElement) {
-          console.log("SVG element has been added.");
-          const elevationDiv = document.querySelector("#elevation");
-          const maxWidth = elevationDiv.clientWidth;
-          const maxHeight = elevationDiv.clientHeight;
-          svgElement.style.width = `${maxWidth}px`;
-          svgElement.style.height = `${maxHeight}px`;
-          svgElement.style.backgroundColor = "inherit";
-          svgElement.setAttribute("preserveAspectRatio", "none");
-          observer.disconnect();
+        const elevationControl = document.querySelector(".elevation-control");
+        if (elevationControl){
+          const svgElement = document.querySelector("svg.background");
+          if (svgElement) {
+            const elevationToggleIcon = document.querySelector("a.elevation-toggle-icon");
+            if (elevationToggleIcon) {
+              elevationToggleIcon.remove();
+            }
+            const elevationSummary = document.querySelector(".elevation-summary");
+            if (elevationSummary) {
+              elevationSummary.remove();
+            }
+            const elevationDiv = document.querySelector("#elevation");
+            const maxWidth = elevationDiv.clientWidth;
+            const maxHeight = elevationDiv.clientHeight;
+            svgElement.style.width = `${maxWidth}px`;
+            svgElement.style.height = `${maxHeight}px`;
+            svgElement.style.backgroundColor = "inherit";
+            svgElement.setAttribute("preserveAspectRatio", "xMinYMin meet");
+            observer.disconnect();
+          }
         }
       }
     }
   };
+
+  // Create the observer, for instance:
   const observer = new MutationObserver(callback);
-  observer.observe(targetNode, config);
+
+  // Start observing the document body
+  observer.observe(document.body, { childList: true, subtree: true });
 
   // Reset View Button
   const resetControl = L.Control.extend({
@@ -274,10 +285,10 @@
   });
 
   map.addControl(new resetControl());
+});
 </script>
-</details>
 
-<p><br /></p>
+</details>
 
 <h2 id="etappenübersicht">Etappenübersicht</h2>
 

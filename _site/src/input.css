@@ -84,26 +84,21 @@ main a[href] {
   @apply text-red-600;
 }
 
-/* adjust font for elevation profile */
-#elevation {
-  @apply pl-6;
-}
-
-#elevation svg .background {
-  transform: translateX(1.5rem) !important;
+svg.background {
+  @apply pl-4;
 }
 
 #elevation svg text {
   @apply font-light fill-gray-800 stroke-0 filter-none dark:fill-gray-300;
-  font-family: 'NotoSansMono';
-  font-size: medium !important;
+  font-family: 'NotoSansMono' !important;
+  font-size: max(1.2vw, 14px) !important;
 }
 
 #elevation svg .axisLabel,
 #elevation svg .label {
   @apply font-light fill-gray-800 stroke-0 filter-none dark:fill-gray-300;
-  font-family: 'NotoSansMono';
-  font-size: medium !important;
+  font-family: 'NotoSansMono' !important;
+  font-size: max(1.2vw, 14px) !important;
 }
 
 .elevation-polyline {

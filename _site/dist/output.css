@@ -281,8 +281,8 @@
   .h-full {
     height: 100%;
   }
-  .max-h-\[30\%\] {
-    max-height: 30%;
+  .max-h-\[40\%\] {
+    max-height: 40%;
   }
   .max-h-full {
     max-height: 100%;
@@ -323,11 +323,11 @@
   .grow-0 {
     flex-grow: 0;
   }
-  .basis-\[30\%\] {
-    flex-basis: 30%;
+  .basis-\[40\%\] {
+    flex-basis: 40%;
   }
-  .basis-\[70\%\] {
-    flex-basis: 70%;
+  .basis-\[60\%\] {
+    flex-basis: 60%;
   }
   .transform {
     transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
@@ -855,11 +855,8 @@ main a[href] {
 .error {
   color: var(--color-red-600);
 }
-#elevation {
-  padding-left: calc(var(--spacing) * 6);
-}
-#elevation svg .background {
-  transform: translateX(1.5rem) !important;
+svg.background {
+  padding-left: calc(var(--spacing) * 4);
 }
 #elevation svg text {
   fill: var(--color-gray-800);
@@ -870,8 +867,8 @@ main a[href] {
   @media (prefers-color-scheme: dark) {
     fill: var(--color-gray-300);
   }
-  font-family: 'NotoSansMono';
-  font-size: medium !important;
+  font-family: 'NotoSansMono' !important;
+  font-size: max(1.2vw, 14px) !important;
 }
 #elevation svg .axisLabel, #elevation svg .label {
   fill: var(--color-gray-800);
@@ -882,8 +879,8 @@ main a[href] {
   @media (prefers-color-scheme: dark) {
     fill: var(--color-gray-300);
   }
-  font-family: 'NotoSansMono';
-  font-size: medium !important;
+  font-family: 'NotoSansMono' !important;
+  font-size: max(1.2vw, 14px) !important;
 }
 .elevation-polyline {
   stroke: green !important;
