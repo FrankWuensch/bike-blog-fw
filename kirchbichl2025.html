@@ -122,24 +122,22 @@ new L.GPX("{{site.baseurl}}{{track.gpx}}", {
 });
 </script>
 
-</br>
-
-<h2>Tourenübersicht</h2>
-<div class="flex flex-col gap-y-2">
+<h3 class="pt-12">Tourenübersicht</h3>
+<div class="flex flex-col gap-y-2 pt-4">
   {% for tour in page.gpx_tracks %}
   <div class="flex flex-col details hover:cursor-pointer">
     <details class="group">
-      <summary class="flex gap-4 justify-between">
-        <div class="flex-1">
-          {{ tour.name }} <span class="ml-4 px-1 bg-white" style="color: {{ tour.color }}">{{ '■' }}</span>
-        </div>
-        <div class="flex items-center">
+      <summary class="flex">
+        <div class="flex flex-row items-center justify-between w-full">
+          <div class="flex-1">
+            {{ tour.name }} <div class="bg-white w-fit px-2" style="color: {{ tour.color }}">{{ '■' }}</div>
+          </div>
           <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-3 w-full">
+      <span class="flex flex-col pt-2 w-full">
         {%if tour.length%}<div>Länge: {{tour.length}} km</div>{%endif%}
         {%if tour.steps%}<div>Anzahl Etappen: {{tour.steps}}</div>{%endif%}
         {%if tour.gpx%}
