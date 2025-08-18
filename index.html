@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Bike Blog FW
-header: true
+header: yes
 date: 29.07.2025
 touren:
   - name: Bodensee Rundtour 2022
@@ -20,6 +20,8 @@ touren:
     link: "2024.html"
     gpx: "src/gpx_files/2024.gpx"
 planned:
+  - name: Kirchbichl 2025
+    link: "kirchbichl2025.html"
   - name: Kirchheim - Oslo 2025
     length: 1825
     steps: ca. 21
@@ -43,8 +45,8 @@ planned:
         </div>
       </summary>
       <span class="flex flex-col pt-3 w-full">
-        <div>Länge: {{tour.length}} km</div>
-        <div>Anzahl Etappen: {{tour.steps}}</div>
+        {%if tour.length%}<div>Länge: {{tour.length}} km</div>{%endif%}
+        {%if tour.steps%}<div>Anzahl Etappen: {{tour.steps}}</div>{%endif%}
         {%if tour.gpx%}
           <a href="{{site.baseurl}}{{tour.gpx}}" download class="w-min text-nowrap">
             Download GPX
@@ -78,8 +80,8 @@ planned:
         </div>
       </summary>
       <span class="flex flex-col pt-3 w-full">
-        <div>Länge: {{tour.length}} km</div>
-        <div>Anzahl Etappen: {{tour.steps}}</div>
+        {%if tour.length%}<div>Länge: {{tour.length}} km</div>{%endif%}
+        {%if tour.steps%}<div>Anzahl Etappen: {{tour.steps}}</div>{%endif%}
         {%if tour.gpx%}
           <a href="{{site.baseurl}}{{tour.gpx}}" download class="w-min text-nowrap">
             Download GPX
