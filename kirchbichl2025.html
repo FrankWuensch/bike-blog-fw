@@ -27,7 +27,7 @@ gpx_tracks:
     color: "#0033FF"
 ---
 
-## Touren Kirchbichl 2025
+<h2>Touren Kirchbichl 2025</h2>
 
 {%include add_map.html%}
 
@@ -122,10 +122,40 @@ new L.GPX("{{site.baseurl}}{{track.gpx}}", {
 });
 </script>
 
-<br/>
+</br>
 
-## Tourenübersicht
-
-{% for track in page.gpx_tracks %}
-    {{ track.name }}
-{% endfor %}
+<h2>Tourenübersicht</h2>
+<div class="flex flex-col gap-y-2">
+  {% for tour in page.gpx_tracks %}
+  <div class="flex flex-col details hover:cursor-pointer">
+    <details class="group">
+      <summary class="flex gap-4 justify-between">
+        <div class="flex-1">
+          {{ tour.name }} <span class="ml-4 px-1 bg-white" style="color: {{ tour.color }}">{{ '■' }}</span>
+        </div>
+        <div class="flex items-center">
+          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
+          </svg>
+        </div>
+      </summary>
+      <span class="flex flex-col pt-3 w-full">
+        {%if tour.length%}<div>Länge: {{tour.length}} km</div>{%endif%}
+        {%if tour.steps%}<div>Anzahl Etappen: {{tour.steps}}</div>{%endif%}
+        {%if tour.gpx%}
+          <a href="{{site.baseurl}}{{tour.gpx}}" download class="w-min text-nowrap">
+            Download GPX
+          </a>
+        {%else%}
+          Keine GPX Datei
+        {%endif%}
+        {%if tour.link%}
+          <a href="{{site.baseurl}}{{tour.link}}">
+            Beschreibung
+          </a>
+        {%endif%}
+      </span>
+    </details>
+  </div>
+  {% endfor %}
+</div>

@@ -3,11 +3,11 @@
     Klicken, um Karte anzuzeigen oder zu verbergen.
   </summary>
 
-  <div class="h-[55vh] flex flex-col mt-4 wrapper">
+  <div class="h-[55vh] w-full flex flex-col mt-4 wrapper">
     <!-- Map: 70% -->
     <div id="map" class="{%if page.elevation_profile%}basis-[60%]{%else%}basis-[100%]{%endif%} grow-0 shrink-0"></div>
     <!-- Elevation: 30% -->
-    {%if page.elevation_profile%}<div id="elevation" class="basis-[40%] grow-0 shrink-0 max-h-[40%] overflow-hidden"></div>{%endif%}
+    {%if page.elevation_profile%}<div id="elevation" class="basis-[40%] grow-0 shrink-0 max-h-[40%] overflow-hidden mx-auto flex"></div>{%endif%}
   </div>
 
   {%if page.elevation_profile%}{% include leaflet.html %}{%endif%}

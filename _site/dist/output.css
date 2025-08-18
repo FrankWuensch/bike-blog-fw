@@ -254,6 +254,9 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
+  }
   .flex {
     display: flex;
   }
@@ -265,9 +268,6 @@
   }
   .inline {
     display: inline;
-  }
-  .inline-block {
-    display: inline-block;
   }
   .table {
     display: table;
@@ -341,9 +341,6 @@
   .basis-\[60\%\] {
     flex-basis: 60%;
   }
-  .basis-\[80\%\] {
-    flex-basis: 80%;
-  }
   .basis-\[100\%\] {
     flex-basis: 100%;
   }
@@ -382,6 +379,9 @@
   }
   .gap-x-12 {
     column-gap: calc(var(--spacing) * 12);
+  }
+  .gap-y-2 {
+    row-gap: calc(var(--spacing) * 2);
   }
   .gap-y-4 {
     row-gap: calc(var(--spacing) * 4);
@@ -464,6 +464,12 @@
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
+  .px-1 {
+    padding-inline: calc(var(--spacing) * 1);
+  }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
@@ -519,9 +525,6 @@
   }
   .text-\[\#FF0000\] {
     color: #FF0000;
-  }
-  .text-\[\'\{\{track\.color\}\}\'\] {
-    color: '{{track.color}}';
   }
   .text-neutral-600 {
     color: var(--color-neutral-600);
