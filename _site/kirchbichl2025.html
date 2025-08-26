@@ -163,7 +163,7 @@ let gpxBounds = null; // Außerhalb der Schleife
 
 tracks.push({
   name: "Ellmau - Hohe Salve - Ellmau",
-  color: "#FF0000"
+  color: "#b91c1c"
 });
 
 console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Ellmau_HoheSalve_Ellmau.gpx");
@@ -178,7 +178,41 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Ellmau_HoheSalve_Ellmau.gp
     wptTypeIcons: {}
   },
   polyline_options: {
-    color: "#FF0000",
+    color: "#b91c1c",
+    weight: 3,
+    opacity: 0.7,
+    linecap: "round",
+  }
+})
+.on("loaded", function (e) {
+  const gpx = e.target;
+  if (!gpxBounds) {
+    gpxBounds = gpx.getBounds();
+  } else {
+    gpxBounds.extend(gpx.getBounds());
+  }
+  map.fitBounds(gpxBounds, { padding: [40, 40] });
+})
+.addTo(map);
+
+tracks.push({
+  name: "Itter - Hohe Salve - Itter",
+  color: "#f97316"
+});
+
+console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_Itter.gpx");
+
+new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_Itter.gpx", {
+  async: true,
+  marker_options: {
+    startIconUrl: null,
+    endIconUrl: null,
+    shadowUrl: null,
+    wptIcons: {},
+    wptTypeIcons: {}
+  },
+  polyline_options: {
+    color: "#f97316",
     weight: 3,
     opacity: 0.7,
     linecap: "round",
@@ -197,7 +231,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Ellmau_HoheSalve_Ellmau.gp
 
 tracks.push({
   name: "Itter - Hohe Salve - Schloss Itter - Itter",
-  color: "#CC0000"
+  color: "#92400e"
 });
 
 console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_SchlossItter_Itter.gpx");
@@ -212,7 +246,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_SchlossItt
     wptTypeIcons: {}
   },
   polyline_options: {
-    color: "#CC0000",
+    color: "#92400e",
     weight: 3,
     opacity: 0.7,
     linecap: "round",
@@ -231,7 +265,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_SchlossItt
 
 tracks.push({
   name: "Kirchbichl - Café Grubers - Kirchbichl",
-  color: "#990000"
+  color: "#ca8a04"
 });
 
 console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_CaféGrubers_Kirchbichl.gpx");
@@ -246,7 +280,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_CaféGrubers_Ki
     wptTypeIcons: {}
   },
   polyline_options: {
-    color: "#990000",
+    color: "#ca8a04",
     weight: 3,
     opacity: 0.7,
     linecap: "round",
@@ -265,7 +299,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_CaféGrubers_Ki
 
 tracks.push({
   name: "Kirchbichl - Hintersteiner See - Bruckhäusl - Kirchbichl",
-  color: "#660000"
+  color: "#3f6212"
 });
 
 console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_Hinterstein_Bruckhäusl_Kirchbichl.gpx");
@@ -280,7 +314,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_Hinterstein_Bru
     wptTypeIcons: {}
   },
   polyline_options: {
-    color: "#660000",
+    color: "#3f6212",
     weight: 3,
     opacity: 0.7,
     linecap: "round",
@@ -299,7 +333,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_Hinterstein_Bru
 
 tracks.push({
   name: "Kirchbichl - Pölven - Schwoich - Kirchbichl",
-  color: "#330000"
+  color: "#022c22"
 });
 
 console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_KleinerPoelven_Schwoich_Kirchbichl.gpx");
@@ -314,7 +348,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_KleinerPoelven_
     wptTypeIcons: {}
   },
   polyline_options: {
-    color: "#330000",
+    color: "#022c22",
     weight: 3,
     opacity: 0.7,
     linecap: "round",
@@ -333,7 +367,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_KleinerPoelven_
 
 tracks.push({
   name: "Kirchbichl - Pendlinghaus - Kirchbichl",
-  color: "#0000FF"
+  color: "#059669"
 });
 
 console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/MTB_Kirchbichl_Pendlinghaus_Kirchbichl.gpx");
@@ -348,7 +382,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/MTB_Kirchbichl_Pendlinghau
     wptTypeIcons: {}
   },
   polyline_options: {
-    color: "#0000FF",
+    color: "#059669",
     weight: 3,
     opacity: 0.7,
     linecap: "round",
@@ -367,7 +401,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/MTB_Kirchbichl_Pendlinghau
 
 tracks.push({
   name: "Westendorf - Alpenrosenhütte - Westendorf",
-  color: "#0033FF"
+  color: "#0891b2"
 });
 
 console.log("Loading GPX from:", "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütte_Westendorf.gpx");
@@ -382,7 +416,7 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
     wptTypeIcons: {}
   },
   polyline_options: {
-    color: "#0033FF",
+    color: "#0891b2",
     weight: 3,
     opacity: 0.7,
     linecap: "round",
@@ -413,8 +447,8 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
       container.href = "#";
       container.title = "Reset view";
       container.innerHTML = `
-        <div class="flex justify-center items-center w-full h-full">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-600 dark:text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        <div class="flex h-full w-full items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sky-600 dark:text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
             <path d="M12 3a9 9 0 1 1-5.657 2"/>
             <path d="M3 4.5h4v4"/>
           </svg>
@@ -438,23 +472,23 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
 <h3 class="pt-12">Tourenübersicht</h3>
 <div class="flex flex-col gap-y-2 pt-4">
   
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            Ellmau - Hohe Salve - Ellmau <div class="bg-white w-fit px-2" style="color: #FF0000">■</div>
+            Ellmau - Hohe Salve - Ellmau <div class="w-fit bg-white px-2" style="color: #b91c1c">■</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
         <div>Länge: 39.5 km</div>
         
         
-          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Ellmau_HoheSalve_Ellmau.gpx" download class="w-min text-nowrap">
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Ellmau_HoheSalve_Ellmau.gpx" download class="text-nowrap w-min">
             Download GPX
           </a>
         
@@ -463,23 +497,48 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
     </details>
   </div>
   
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            Itter - Hohe Salve - Schloss Itter - Itter <div class="bg-white w-fit px-2" style="color: #CC0000">■</div>
+            Itter - Hohe Salve - Itter <div class="w-fit bg-white px-2" style="color: #f97316">■</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
+        <div>Länge: 21.5 km</div>
+        
+        
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_Itter.gpx" download class="text-nowrap w-min">
+            Download GPX
+          </a>
+        
+        
+      </span>
+    </details>
+  </div>
+  
+  <div class="details flex flex-col hover:cursor-pointer">
+    <details class="group">
+      <summary class="flex">
+        <div class="flex w-full flex-row items-center justify-between">
+          <div class="flex-1">
+            Itter - Hohe Salve - Schloss Itter - Itter <div class="w-fit bg-white px-2" style="color: #92400e">■</div>
+          </div>
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
+          </svg>
+        </div>
+      </summary>
+      <span class="flex w-full flex-col pt-2">
         <div>Länge: 27 km</div>
         
         
-          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_SchlossItter_Itter.gpx" download class="w-min text-nowrap">
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Itter_HoheSalve_SchlossItter_Itter.gpx" download class="text-nowrap w-min">
             Download GPX
           </a>
         
@@ -488,23 +547,23 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
     </details>
   </div>
   
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            Kirchbichl - Café Grubers - Kirchbichl <div class="bg-white w-fit px-2" style="color: #990000">■</div>
+            Kirchbichl - Café Grubers - Kirchbichl <div class="w-fit bg-white px-2" style="color: #ca8a04">■</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
         <div>Länge: 16.5 km</div>
         
         
-          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_CaféGrubers_Kirchbichl.gpx" download class="w-min text-nowrap">
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_CaféGrubers_Kirchbichl.gpx" download class="text-nowrap w-min">
             Download GPX
           </a>
         
@@ -513,23 +572,23 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
     </details>
   </div>
   
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            Kirchbichl - Hintersteiner See - Bruckhäusl - Kirchbichl <div class="bg-white w-fit px-2" style="color: #660000">■</div>
+            Kirchbichl - Hintersteiner See - Bruckhäusl - Kirchbichl <div class="w-fit bg-white px-2" style="color: #3f6212">■</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
         <div>Länge: 41.2 km</div>
         
         
-          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_Hinterstein_Bruckhäusl_Kirchbichl.gpx" download class="w-min text-nowrap">
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_Hinterstein_Bruckhäusl_Kirchbichl.gpx" download class="text-nowrap w-min">
             Download GPX
           </a>
         
@@ -538,23 +597,23 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
     </details>
   </div>
   
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            Kirchbichl - Pölven - Schwoich - Kirchbichl <div class="bg-white w-fit px-2" style="color: #330000">■</div>
+            Kirchbichl - Pölven - Schwoich - Kirchbichl <div class="w-fit bg-white px-2" style="color: #022c22">■</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
         <div>Länge: 15.1 km</div>
         
         
-          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_KleinerPoelven_Schwoich_Kirchbichl.gpx" download class="w-min text-nowrap">
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Kirchbichl_KleinerPoelven_Schwoich_Kirchbichl.gpx" download class="text-nowrap w-min">
             Download GPX
           </a>
         
@@ -563,23 +622,23 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
     </details>
   </div>
   
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            Kirchbichl - Pendlinghaus - Kirchbichl <div class="bg-white w-fit px-2" style="color: #0000FF">■</div>
+            Kirchbichl - Pendlinghaus - Kirchbichl <div class="w-fit bg-white px-2" style="color: #059669">■</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
         <div>Länge: 47.4 km</div>
         
         
-          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/MTB_Kirchbichl_Pendlinghaus_Kirchbichl.gpx" download class="w-min text-nowrap">
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/MTB_Kirchbichl_Pendlinghaus_Kirchbichl.gpx" download class="text-nowrap w-min">
             Download GPX
           </a>
         
@@ -588,23 +647,23 @@ new L.GPX("/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütt
     </details>
   </div>
   
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            Westendorf - Alpenrosenhütte - Westendorf <div class="bg-white w-fit px-2" style="color: #0033FF">■</div>
+            Westendorf - Alpenrosenhütte - Westendorf <div class="w-fit bg-white px-2" style="color: #0891b2">■</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
         <div>Länge: 19.5 km</div>
         
         
-          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütte_Westendorf.gpx" download class="w-min text-nowrap">
+          <a href="/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütte_Westendorf.gpx" download class="text-nowrap w-min">
             Download GPX
           </a>
         

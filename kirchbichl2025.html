@@ -7,31 +7,35 @@ gpx_tracks:
   - name: Ellmau - Hohe Salve - Ellmau
     gpx: "src/gpx_files/Kirchbichl2025/Ellmau_HoheSalve_Ellmau.gpx"
     length: 39.5
-    color: "#FF0000"
+    color: "#b91c1c"
+  - name: Itter - Hohe Salve - Itter
+    gpx: "src/gpx_files/Kirchbichl2025/Itter_HoheSalve_Itter.gpx"
+    length: 21.5
+    color: "#f97316"
   - name: Itter - Hohe Salve - Schloss Itter - Itter
     gpx: "src/gpx_files/Kirchbichl2025/Itter_HoheSalve_SchlossItter_Itter.gpx"
     length: 27
-    color: "#CC0000"
+    color: "#92400e"
   - name: Kirchbichl - Café Grubers - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/Kirchbichl_CaféGrubers_Kirchbichl.gpx"
     length: 16.5
-    color: "#990000"
+    color: "#ca8a04"
   - name: Kirchbichl - Hintersteiner See - Bruckhäusl - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/Kirchbichl_Hinterstein_Bruckhäusl_Kirchbichl.gpx"
     length: 41.2
-    color: "#660000"
+    color: "#3f6212"
   - name: Kirchbichl - Pölven - Schwoich - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/Kirchbichl_KleinerPoelven_Schwoich_Kirchbichl.gpx"
     length: 15.1
-    color: "#330000"
+    color: "#022c22"
   - name: Kirchbichl - Pendlinghaus - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/MTB_Kirchbichl_Pendlinghaus_Kirchbichl.gpx"
     length: 47.4
-    color: "#0000FF"
+    color: "#059669"
   - name: Westendorf - Alpenrosenhütte - Westendorf
     gpx: "src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütte_Westendorf.gpx"
     length: 19.5
-    color: "#0033FF"
+    color: "#0891b2"
 ---
 
 <h2>Touren Kirchbichl 2025</h2>
@@ -107,8 +111,8 @@ new L.GPX("{{site.baseurl}}{{track.gpx}}", {
       container.href = "#";
       container.title = "Reset view";
       container.innerHTML = `
-        <div class="flex justify-center items-center w-full h-full">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-600 dark:text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        <div class="flex h-full w-full items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sky-600 dark:text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
             <path d="M12 3a9 9 0 1 1-5.657 2"/>
             <path d="M3 4.5h4v4"/>
           </svg>
@@ -132,23 +136,23 @@ new L.GPX("{{site.baseurl}}{{track.gpx}}", {
 <h3 class="pt-12">Tourenübersicht</h3>
 <div class="flex flex-col gap-y-2 pt-4">
   {% for tour in page.gpx_tracks %}
-  <div class="flex flex-col details hover:cursor-pointer">
+  <div class="details flex flex-col hover:cursor-pointer">
     <details class="group">
       <summary class="flex">
-        <div class="flex flex-row items-center justify-between w-full">
+        <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
-            {{ tour.name }} <div class="bg-white w-fit px-2" style="color: {{ tour.color }}">{{ '■' }}</div>
+            {{ tour.name }} <div class="w-fit bg-white px-2" style="color: {{ tour.color }}">{{ '■' }}</div>
           </div>
-          <svg class="w-6 h-6 transition-transform duration-300 transform shrink-0 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
           </svg>
         </div>
       </summary>
-      <span class="flex flex-col pt-2 w-full">
+      <span class="flex w-full flex-col pt-2">
         {%if tour.length%}<div>Länge: {{tour.length}} km</div>{%endif%}
         {%if tour.steps%}<div>Anzahl Etappen: {{tour.steps}}</div>{%endif%}
         {%if tour.gpx%}
-          <a href="{{site.baseurl}}{{tour.gpx}}" download class="w-min text-nowrap">
+          <a href="{{site.baseurl}}{{tour.gpx}}" download class="text-nowrap w-min">
             Download GPX
           </a>
         {%else%}
