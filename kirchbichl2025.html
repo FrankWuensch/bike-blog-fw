@@ -149,7 +149,7 @@ new L.GPX("{{site.baseurl}}{{track.gpx}}", {
         <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
             {{ tour.name }} <div class="w-fit bg-white px-2" style="color: {{ tour.color }}">{{ '■' }}</div>
-            {%if tour.date%}<div class="mt-2 text-right w-full">Gefahren am: {{tour.date}}</div>{%endif%}
+            {%if tour.date%}<div class="mt-2 text-right w-full mx-4">Gefahren am: <span class="mono">{{tour.date}}</span></div>{%endif%}
           </div>
           <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />

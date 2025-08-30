@@ -32,6 +32,10 @@ em,
   font-family: 'InterItalic';
 }
 
+.mono {
+  font-family: 'NotoSansMono';
+}
+
 nav h1 {
   @apply text-xl text-lime-600 dark:text-lime-300 xl:text-2xl;
 }
