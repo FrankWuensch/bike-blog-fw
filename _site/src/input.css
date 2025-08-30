@@ -95,14 +95,14 @@ svg.background {
 #elevation svg text {
   @apply font-light fill-gray-800 stroke-0 filter-none dark:fill-gray-300;
   font-family: 'NotoSansMono' !important;
-  font-size: max(1.2vw, 14px) !important;
+  font-size: max(0.8vw, 12px) !important;
 }
 
 #elevation svg .axisLabel,
 #elevation svg .label {
   @apply font-light fill-gray-800 stroke-0 filter-none dark:fill-gray-300;
   font-family: 'NotoSansMono' !important;
-  font-size: max(1.2vw, 14px) !important;
+  font-size: max(0.8vw, 12px) !important;
 }
 
 .elevation-polyline {

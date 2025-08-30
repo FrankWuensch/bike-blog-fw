@@ -245,9 +245,6 @@
   .mx-4 {
     margin-inline: calc(var(--spacing) * 4);
   }
-  .mx-5 {
-    margin-inline: calc(var(--spacing) * 5);
-  }
   .mx-8 {
     margin-inline: calc(var(--spacing) * 8);
   }
@@ -511,9 +508,6 @@
   }
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
-  }
-  .pb-1 {
-    padding-bottom: calc(var(--spacing) * 1);
   }
   .pb-1\.5 {
     padding-bottom: calc(var(--spacing) * 1.5);
@@ -1068,7 +1062,7 @@ svg.background {
     fill: var(--color-gray-300);
   }
   font-family: 'NotoSansMono' !important;
-  font-size: max(1.2vw, 14px) !important;
+  font-size: max(0.8vw, 12px) !important;
 }
 #elevation svg .axisLabel, #elevation svg .label {
   fill: var(--color-gray-800);
@@ -1080,7 +1074,7 @@ svg.background {
     fill: var(--color-gray-300);
   }
   font-family: 'NotoSansMono' !important;
-  font-size: max(1.2vw, 14px) !important;
+  font-size: max(0.8vw, 12px) !important;
 }
 .elevation-polyline {
   stroke: green !important;

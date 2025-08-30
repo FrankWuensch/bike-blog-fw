@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de" class="w-full h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/bike-blog-fw/src/fonts.css" rel="stylesheet" />
+    <link href="/bike-blog-fw/dist/output.css" rel="stylesheet" />
+    <link rel="icon" href="/bike-blog-fw/src/fahrrad_symbol_bw.png" />
+    <title>Kirchbichl 25.08.2025</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script src="/bike-blog-fw/src/darkmode.js"></script>
+    <script src="/bike-blog-fw/src/active_elements.js"></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="https://unpkg.com/leaflet-gpx/gpx.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.css" />
+    <script src="https://unpkg.com/@raruto/leaflet-elevation/dist/leaflet-elevation.js"></script>
+  </head>
+
+  <body
+    class="base-font flex h-full w-full flex-col overflow-hidden text-sm xl:text-base bg-gradient-to-r from-lime-100 dark:from-lime-950 from-10% via-lime-100 dark:via-lime-950 via-70% to-lime-200 dark:to-lime-900"
+  >
+    
+    <header class="fixed top-0 left-0 z-20 w-full h-16 flex-0 xl:h-24">
+      <nav class="relative w-full h-full bg-lime-200 border-b-4 border-lime-600 dark:bg-lime-900 dark:border-lime-300">
+  <span class="flex flex-row gap-x-12 items-center h-full xl:mx-auto xl:max-w-6xl">
+    <img src="/bike-blog-fw/src/fahrrad_symbol.png" class="max-h-full" id="image-lightmode"/>
+    <!-- in case of darkmode -->
+    <script>
+      const img = document.querySelector('#image-lightmode');
+      if (document.documentElement.classList.contains('dark')) {
+        img.src = "/bike-blog-fw/src/fahrrad_symbol_bw.png";
+      } else {
+        img.src = "/bike-blog-fw/src/fahrrad_symbol.png";
+      }
+    </script>
+    <!-- for mobile screens < 1280px -->
+    <h1 class="flex justify-center items-center xl:hidden">Bike Blog FW</h1>
+    <div
+      class="flex absolute top-0 right-0 justify-center items-center w-20 h-full bg-white/50 dark:bg-black/50 hover:cursor-pointer xl:hidden"
+      id="menu"
+    >
+      <img
+        src="/bike-blog-fw/src/icons/menu.svg"
+        alt="menu-icon"
+        class="w-[75%]"
+      />
+      <div
+        class="fixed right-0 top-0 z-10 mt-16 hidden w-[75%] rounded-bl-xl bg-lime-50 dark:bg-lime-950 shadow-md"
+        id="menu-content"
+      >
+        <span class="flex flex-col w-full divide-y-2 divide-lime-600 dark:divide-lime-300">
+          
+          <a
+            href="/bike-blog-fw/"
+            class="p-4 w-full text-xl text-end link-title hover:bg-lime-100 dark:hover:bg-lime-900"
+            >Start
+          </a>
+          
+          <a
+            href="/bike-blog-fw/me.html"
+            class="p-4 w-full text-xl text-end link-title hover:bg-lime-100 dark:hover:bg-lime-900"
+            >Über mich
+          </a>
+          
+          <a
+            href="/bike-blog-fw/equipment.html"
+            class="p-4 w-full text-xl text-end link-title hover:bg-lime-100 dark:hover:bg-lime-900"
+            >Ausrüstung
+          </a>
+          
+        </span>
+      </div>
+    </div>
+    <!-- for screens >= 1280px (xl) -->
+    <span class="flex justify-between items-center w-full max-xl:hidden">
+      <h1>Bike Blog FW</h1>
+      <ul class="flex flex-row gap-x-8">
+        
+        <li>
+          <a
+            href="/bike-blog-fw/"
+            class="py-4 pl-4 link-title"
+            >Start
+          </a>
+        </li>
+        
+        <li>
+          <a
+            href="/bike-blog-fw/me.html"
+            class="py-4 pl-4 link-title"
+            >Über mich
+          </a>
+        </li>
+        
+        <li>
+          <a
+            href="/bike-blog-fw/equipment.html"
+            class="py-4 pl-4 link-title"
+            >Ausrüstung
+          </a>
+        </li>
+        
+      </ul>
+    </span>
+  </span>
+</nav>
+
+    </header>
+    
+    <!-- check responsive styling upon 1280px (xl) breakpoint -->
+    <main
+      class="overflow-y-auto flex-1 px-8 pt-12 pb-12 mt-16 w-full max-w-6xl h-full xl:mt-24 xl:px-0 xl:pb-20 xl:pt-20 dark:text-neutral-300 text-neutral-600"
+      id="main-container"
+    >
+      <div class="relative mx-auto w-full max-w-6xl"><h4 id="25082025">25.08.2025</h4>
+
+<h1 id="westendorf---alpenrosenhütte---westendorf">Westendorf - Alpenrosenhütte - Westendorf</h1>
+
+<details open="">
+  <summary class="hover:cursor-pointer">
+    Klicken, um Karte anzuzeigen oder zu verbergen.
+  </summary>
+
+  <div class="h-[55vh] w-full flex flex-col mt-4 wrapper">
+    <!-- Map: 70% -->
+    <div id="map" class="basis-[60%] grow-0 shrink-0"></div>
+    <!-- Elevation: 30% -->
+    <div id="elevation" class="basis-[40%] grow-0 shrink-0 max-h-[40%] overflow-hidden mx-auto flex"></div>
+  </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  let darkmode = document.documentElement.classList.contains("dark");
+
+  // Initialize Leaflet map
+  const map = L.map("map", {
+    zoomSnap: 0.1,
+    zoomDelta: 0.1,
+  }).setView([48.64683407492267, 9.451204869722357], 13);
+
+  // Add tile layer
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  // Elevation plugin setup
+  const elevation_options = {
+    theme: "lime-theme",
+    detached: true,
+    elevationDiv: "#elevation",
+    followMarker: false,
+    autofitBounds: false,
+    imperial: false,
+    reverseCoords: false,
+    acceleration: false,
+    slope: false,
+    speed: false,
+    altitude: true,
+    time: false,
+    distance: true,
+    summary: false,
+    downloadLink: false,
+    ruler: true,
+    legend: false,
+    almostOver: false,
+    distanceMarkers: false,
+    edgeScale: false,
+    hotline: false,
+    timestamps: false,
+    waypoints: true,
+    wptLabels: true,
+    preferCanvas: true,
+  };
+
+  const elevationControl = L.control.elevation(elevation_options);
+  elevationControl.addTo(map);
+
+  const url = "/bike-blog-fw/src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütte_Westendorf.gpx";
+  console.log("Loading GPX from:", url);
+
+  let gpxBounds = null;
+
+  // Load GPX file
+  new L.GPX(url, {
+    async: true,
+    marker_options: {
+      startIconUrl: null,
+      endIconUrl: null,
+      shadowUrl: null,
+    },
+    polyline_options: {
+      weight: 3,
+      opacity: 0.7,
+      linecap: "round",
+    }
+  })
+    .on("loaded", function (e) {
+      const gpx = e.target;
+      gpxBounds = gpx.getBounds();
+      map.fitBounds(gpxBounds, { padding: [40, 40] });
+    })
+    .on("addline", function (e) {
+      elevationControl.addData(e.line);
+    })
+    .addTo(map);
+
+  // Adjust SVG size once it's added
+  const targetNode = document.querySelector(".wrapper");
+  const config = { childList: true, subtree: true };
+  const callback = (mutationList, observer) => {
+    for (const mutation of mutationList) {
+      if (mutation.type === "childList") {
+        const elevationControl = document.querySelector(".elevation-control");
+        if (elevationControl){
+          const svgElement = document.querySelector("svg.background");
+          if (svgElement) {
+            const elevationToggleIcon = document.querySelector("a.elevation-toggle-icon");
+            if (elevationToggleIcon) {
+              elevationToggleIcon.remove();
+            }
+            const elevationSummary = document.querySelector(".elevation-summary");
+            if (elevationSummary) {
+              elevationSummary.remove();
+            }
+            const elevationDiv = document.querySelector("#elevation");
+            const maxWidth = elevationDiv.clientWidth;
+            const maxHeight = elevationDiv.clientHeight;
+            svgElement.style.width = `${maxWidth}px`;
+            svgElement.style.height = `${maxHeight}px`;
+            svgElement.style.backgroundColor = "inherit";
+            svgElement.setAttribute("preserveAspectRatio", "xMinYMin meet");
+            observer.disconnect();
+          }
+        }
+      }
+    }
+  };
+
+  // Create the observer, for instance:
+  const observer = new MutationObserver(callback);
+
+  // Start observing the document body
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // Reset View Button
+  const resetControl = L.Control.extend({
+    options: {
+      position: "topleft",
+    },
+
+    onAdd: function () {
+      const div = L.DomUtil.create("div", "leaflet-control-zoom leaflet-bar");
+      const container = L.DomUtil.create("a", "leaflet-bar-part", div);
+      container.href = "#";
+      container.title = "Reset view";
+      container.innerHTML = `
+        <div class="flex justify-center items-center w-full h-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-600 dark:text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+            <path d="M12 3a9 9 0 1 1-5.657 2"/>
+            <path d="M3 4.5h4v4"/>
+          </svg>
+        </div>
+      `;
+      L.DomEvent.on(container, "click", L.DomEvent.stopPropagation)
+        .on(container, "click", L.DomEvent.preventDefault)
+        .on(container, "click", () => {
+          if (gpxBounds) {
+            map.fitBounds(gpxBounds, { padding: [40, 40] });
+          }
+        });
+      return div;
+    },
+  });
+
+  map.addControl(new resetControl());
+});
+</script>
+
+</details>
+
+<h2 id="beschreibung-mit-bildern">Beschreibung mit Bildern</h2>
+
+<blockquote>
+
+  <p>Diese Tour beginne ich an der Talstation der Bergbahn in Westendorf. Auch hier steht
+ein kostenloser Parkplatz zur Verfügung. Die Route startet in Richtung Hauptstraße und
+geht von dort eine steile Straße bergauf. Auch hier ist der Weg anfangs gut geteert
+und ich komme gut voran. Nach kurzer Zeit geht es durch einen kleinen Tunnel und
+anschließend durch ein kleines Waldgebiet. Immer wieder werde ich von verschiedenen
+Fahrzeugen überholt, zwar immer mit Rücksicht, aber dennoch bin ich davon ziemlich
+genervt. Schließlich muss ich gefühlt alle zwei Minuten an der Seite anhalten, um
+die Fahrzeuge durch zu lassen. Erfreulicherweise habe ich auf dieser Strecke immer
+wieder einen phantastischen Blick auf die Hohe Salve.</p>
+</blockquote>
+
+<p><img src="/bike-blog-fw/src/images/kirchbichl2025/25082025/salve.jpg" alt="Blick auf die Hohe Salve" loading="lazy" class="w-full xl:mx-auto xl:w-[75%]" /></p>
+
+<p>Nach ca. eineinhalb Stunden Fahrt erreiche ich die erste Einkehrmöglichkeit: Das
+Berggasthaus Stimmlach. Hier genieße ich ein kühles Apfelschorle und einen
+hausgemachten Topfenstrudel. Heute ist es bereits sehr warm.</p>
+
+<p><img src="/bike-blog-fw/src/images/kirchbichl2025/25082025/topfenstrudel.jpg" alt="Hausgemachter Topfenstrudel" loading="lazy" class="w-full xl:mx-auto xl:w-[75%]" /></p>
+
+<p>Die Gastwirtin bestätigt mir, dass der starke Verkehr ungewöhnlich für diese Straße
+ist. Da aber weiter oben ein Haus gebaut wird und das die einzige Straße nach oben ist,
+fahren immer wieder die Handwerker an mir vorbei. Vom Gasthaus Stimmlach bis zur
+Alpenrosenhütte sind es zwar nur ca. dreieinhalb Kilometer, für diese Strecke brauche
+ich aber dennoch rund eine Stunde. Dass der Weg bereits kurz nach dem Gasthaus
+in losen Schotter übergeht und dabei noch Steigungen mit Spitzenwerten um 22% zu
+bewältigen sind, macht es nicht einfacher. Dennoch erreiche ich die Alpenrosenhütte.
+Nach diesen Strapazen habe ich mir einen Aperol und einen Kaiserschmarrn verdient.</p>
+
+<p><img src="/bike-blog-fw/src/images/kirchbichl2025/25082025/aperol.jpg" alt="Aperol mit Blick auf die Hohe Salve" loading="lazy" class="w-full xl:mx-auto xl:w-[75%]" /></p>
+
+<p><img src="/bike-blog-fw/src/images/kirchbichl2025/25082025/kaiserschmarrn.jpg" alt="Hausgemachter Kaiserschmarrn" loading="lazy" class="w-full xl:mx-auto xl:w-[75%]" /></p>
+
+<p>Nach dem Aufenthalt geht es über eine extrem steile Kuhweide schiebend und durch ein
+Gatter. Einige Zeit später kann ich wieder ein Stück fahren, wobei die
+Wegbeschaffenheit eher mäßig gut ist. Am Ende des Weges kommt eine Holztüre
+in einem Stacheldrahtzaun. Leider passt mein Fahrrad hier nicht durch. Ich habe daher
+keine andere Möglichkeit, als meine Tasche über den Stacheldrahtzaun auf die andere
+Seite zu heben und anschließend mein Fahrrad von der anderen Seite liegend unter dem
+Stacheldrahtzaun hindurch zu schieben.</p>
+
+<p><img src="/bike-blog-fw/src/images/kirchbichl2025/25082025/stacheldraht.jpg" alt="Stacheldrahtzaun" loading="lazy" class="w-full xl:mx-auto xl:w-[75%]" /></p>
+
+<p>Schlussendlich fahre ich über einen Wanderweg, an dessen Seite eine Holzkugelbahn für
+Kinder entlang führt, bis zum Panoramarestaurant Choralpe. Leider muss ich
+feststellen, dass das Restaurant geschlossen hat. Daher bin ich froh, in der
+Alpenrosenhütte eine Pause gemacht zu haben. Als Beweis dass ich dort war,
+fotografiere ich mein Fahrrad vor dem Schriftzug “Brixental”.</p>
+
+<p><img src="/bike-blog-fw/src/images/kirchbichl2025/25082025/brixental.jpg" alt="Stacheldrahtzaun" loading="lazy" class="w-full xl:mx-auto xl:w-[75%]" /></p>
+
+<p>Leider muss ich kurze Zeit später feststellen, dass auch an dieser Stelle die
+Webseite, die ich für die Tourenplanung nutze, nicht richtig funktioniert hat.
+Der Weg, den ich fahren soll, mündet in einem ausgesetzten, Kletterpfad ähnlichen
+Trampelpfad. Extrem steil und neben der Liftspur. Am Start des Pfades begegne
+ich einem Gleitschirmflieger, der gerade starten will. Dieser schaut mich nur
+an und schüttelt ungläubig den Kopf. Nach ein paar Worten ist klar, hier geht
+es nicht weiter. Also drehe ich um und fahre den gleichen Weg zurück, wie ich
+gekommen bin. Während ich nach oben ca. 2,5 Stunden reine Fahrzeit gebraucht
+habe, komme ich nun bereits nach rund 50 Minuten am Auto an. Alles in Allem
+trotzdem eine der eindrucksvollsten Touren.</p>
+</div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menu = document.querySelector("#menu");
+        const menuContent = document.querySelector("#menu-content");
+        const mainContainer = document.querySelector("#main-container");
+        if (menu) {
+          menu.addEventListener("click", (e) => {
+            menuContent.classList.toggle("hidden");
+            mainContainer.classList.toggle("blur-sm");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
