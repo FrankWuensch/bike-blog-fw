@@ -12,22 +12,27 @@ gpx_tracks:
     gpx: "src/gpx_files/Kirchbichl2025/Itter_HoheSalve_Itter.gpx"
     length: 21.5
     color: "#f97316"
+    date: "27.08.2025"
   - name: Itter - Hohe Salve - Schloss Itter - Itter
     gpx: "src/gpx_files/Kirchbichl2025/Itter_HoheSalve_SchlossItter_Itter.gpx"
     length: 27
     color: "#92400e"
+    date: "23.08.2025"
   - name: Kirchbichl - Café Grubers - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/Kirchbichl_CaféGrubers_Kirchbichl.gpx"
     length: 16.5
     color: "#ca8a04"
+    date: "21.08.2025"
   - name: Kirchbichl - Hintersteiner See - Bruckhäusl - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/Kirchbichl_Hinterstein_Bruckhäusl_Kirchbichl.gpx"
     length: 41.2
     color: "#3f6212"
+    date: "22.08.2025"
   - name: Kirchbichl - Pölven - Schwoich - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/Kirchbichl_KleinerPoelven_Schwoich_Kirchbichl.gpx"
     length: 15.1
     color: "#022c22"
+    date: "20.08.2025"
   - name: Kirchbichl - Pendlinghaus - Kirchbichl
     gpx: "src/gpx_files/Kirchbichl2025/MTB_Kirchbichl_Pendlinghaus_Kirchbichl.gpx"
     length: 47.4
@@ -36,8 +41,10 @@ gpx_tracks:
     gpx: "src/gpx_files/Kirchbichl2025/Westendorf_Alpenrosenhütte_Westendorf.gpx"
     length: 19.5
     color: "#0891b2"
+    date: "25.08.2025"
 ---
 
+<h4>19.08.2025 - 29.08.2025</h4>
 <h2>Touren Kirchbichl 2025</h2>
 
 {%include add_map.html%}
@@ -142,6 +149,7 @@ new L.GPX("{{site.baseurl}}{{track.gpx}}", {
         <div class="flex w-full flex-row items-center justify-between">
           <div class="flex-1">
             {{ tour.name }} <div class="w-fit bg-white px-2" style="color: {{ tour.color }}">{{ '■' }}</div>
+            {%if tour.date%}<div class="mt-2 text-right w-full">Gefahren am: {{tour.date}}</div>{%endif%}
           </div>
           <svg class="h-6 w-6 shrink-0 transform transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="currentColor" d="M16.59 8.59L12 13.17L7.41 8.59L6 10l6 6l6-6z" />
@@ -150,7 +158,6 @@ new L.GPX("{{site.baseurl}}{{track.gpx}}", {
       </summary>
       <span class="flex w-full flex-col pt-2">
         {%if tour.length%}<div>Länge: {{tour.length}} km</div>{%endif%}
-        {%if tour.steps%}<div>Anzahl Etappen: {{tour.steps}}</div>{%endif%}
         {%if tour.gpx%}
           <a href="{{site.baseurl}}{{tour.gpx}}" download class="text-nowrap w-min">
             Download GPX
