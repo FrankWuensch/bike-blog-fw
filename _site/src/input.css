@@ -65,7 +65,7 @@ h4 {
 }
 
 p {
-  @apply pb-4 leading-relaxed dark:text-neutral-300 text-neutral-600;
+  @apply pb-4 leading-relaxed dark:text-neutral-300 text-neutral-600 text-justify;
 }
 
 hr {
